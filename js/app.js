@@ -5,7 +5,7 @@ class App {
         this.routes = {
             '': [UserView],
             'register': [UserView],
-            'login': [UserView]
+            'login': [UserView],
         };
 
         // import dummy data for testing purposes

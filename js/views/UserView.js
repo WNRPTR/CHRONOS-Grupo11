@@ -31,6 +31,7 @@ export default class UserView {
                 }
                 this.userController.register(this.registerUsername.value, this.registerPassword.value, 'user');
                 this.displayMessage('User registered with success!', 'success');
+                location.href = '../html/login.html';
             } catch (e) {
                 this.displayMessage(e, 'danger');
             }
@@ -73,8 +74,8 @@ export default class UserView {
     }
 
     displayMessage(message, type) {
-        this.messages.innerHTML =
-            `<div class="alert alert-${type}" role="alert">${message}</div>`;
+        this.messages =
+            alert(`${type}, ${message}`);
     }
 
     updateButtons(event) {
