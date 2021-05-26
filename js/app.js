@@ -4,7 +4,7 @@ class App {
     constructor() {
         this.routes = {
             '': [UserView],
-            'index': [UserView]
+            'register': [UserView]
         };
 
         // import dummy data for testing purposes
