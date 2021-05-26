@@ -29,7 +29,7 @@ export default class UserView {
                 if (this.registerPassword.value !== this.registerPassword2.value) {
                     throw Error('Password and Confirm Password are not equal');
                 }
-                this.userController.register(this.registerUsername.value, this.registerPassword.value);
+                this.userController.register(this.registerUsername.value, this.registerPassword.value, 'user');
                 this.displayMessage('User registered with success!', 'success');
             } catch (e) {
                 this.displayMessage(e, 'danger');
