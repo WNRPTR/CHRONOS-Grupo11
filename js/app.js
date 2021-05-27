@@ -1,4 +1,5 @@
 import UserView from './views/UserView.js'
+import ProfileView from './views/ProfileView.js'
 
 class App {
     constructor() {
@@ -6,6 +7,7 @@ class App {
             '': [UserView],
             'register': [UserView],
             'login': [UserView],
+            'testePerf': [ProfileView]
         };
 
         // import dummy data for testing purposes
