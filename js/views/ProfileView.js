@@ -1,8 +1,8 @@
-import ProfileControler from '../controllers/UserController.js'
+import UserController from '../controllers/UserController.js'
 
 export default class ProfileView {
     constructor() {
-        this.ProfileControler = new ProfileControler();
+        this.userController = new UserController();
 
         // Password change DOM
         this.oldPassword = document.getElementById('oldPassword');
@@ -21,7 +21,7 @@ export default class ProfileView {
                 }
                 this.userController.changePassword(this.newPassword.value, this.confirmNewPassord.value, 'user');
                 this.displayMessage('Palavra pass alterada com sucesso !', 'success');
-                
+
             } catch (e) {
                 this.displayMessage(e, 'danger');
             }
