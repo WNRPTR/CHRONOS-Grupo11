@@ -33,3 +33,20 @@ export default class UserController {
         return sessionStorage.getItem('loggedUser') !== null ? true : false;
     }
 }
+
+
+
+
+export default class ProfileController {
+    constructor() {
+        this.users = localStorage.users ? JSON.parse(localStorage.users) : []
+    }
+    changePassword(newPassword, oldPassword) {
+        if (!this.users.find(user => user.username === username).password === oldPassword) {
+            throw Error(`User with username "${username}" already exists!`);
+        } else {
+            this.users.find(user => user.username).password = newPassword
+        }
+
+    }
+}
