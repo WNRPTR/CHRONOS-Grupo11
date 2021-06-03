@@ -19,7 +19,7 @@ export default class ProfileView {
                 if (this.newPassword.value !== this.confirmNewPassord.value) {
                     throw Error('A palavra pass nova não corresponde a sua confirmação!');
                 }
-                this.userController.changePassword(this.newPassword.value, this.confirmNewPassord.value, 'user');
+                this.userController.changePassword(this.newPassword.value);
                 this.displayMessage('Palavra pass alterada com sucesso !', 'success');
 
             } catch (e) {

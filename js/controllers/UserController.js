@@ -34,13 +34,9 @@ export default class UserController {
     }
 
 
-    changePassword(newPassword, oldPassword) {
-        if (!this.users.find(user => user.username === username).password === oldPassword) {
-            throw Error(`User with username "${username}" already exists!`);
-        } else {
-            this.users.find(user => user.username).password = newPassword
-        }
-
+    changePassword(newPassword) {
+        const username = sessionStorage.getItem('loggedUser')
+        this.users.find(user => user.username == username).password = newPassword
     }
 }
 

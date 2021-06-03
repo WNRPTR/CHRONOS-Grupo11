@@ -9,14 +9,20 @@ export default class UserView {
         this.registerPassword = document.getElementById('txtRegisterPassword');
         this.registerPassword2 = document.getElementById('txtConfirmRegisterPassword');
         this.registerButton = document.getElementById('btnRegister');
-        this.bindRegisterForm();
+        if (this.registerUsername) {
+            this.bindRegisterForm();
+        }
+
 
         // login/logout DOM
         this.loginUsername = document.getElementById('txtUsername');
         this.loginPassword = document.getElementById('txtPassword');
         this.loginButton = document.getElementById('btnLogin');
         this.logoutButton = document.getElementById('btnLogout');
-        this.bindLoginForm();
+        if (this.loginUsername) {
+            this.bindLoginForm();
+        }
+
 
         this.messages = document.querySelector('#messages')
         this.checkLoginStatus();
@@ -58,7 +64,7 @@ export default class UserView {
 
         this.logoutButton.addEventListener('click', () => {
             this.userController.logout();
-            this.updateButtons('logout');
+            //this.updateButtons('logout');
             location.reload()
         });
     }
@@ -67,9 +73,9 @@ export default class UserView {
 
     checkLoginStatus() {
         if (this.userController.isLogged()) {
-            this.updateButtons('login');
+            /* this.updateButtons('login'); */
         } else {
-            this.updateButtons('logout');
+            /* this.updateButtons('logout'); */
         }
     }
 
