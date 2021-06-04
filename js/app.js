@@ -22,12 +22,14 @@ class App {
             {
                 id: 1,
                 username: 'user1',
-                password: 'pass1'
+                password: 'pass1',
+                type: 'user'
             },
             {
                 id: 2,
                 username: 'user2',
-                password: 'pass2'
+                password: 'pass2',
+                type: 'user'
             }
         ];
 
