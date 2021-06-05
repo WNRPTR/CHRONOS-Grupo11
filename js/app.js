@@ -7,7 +7,7 @@ class App {
             '': [UserView],
             'register': [UserView],
             'login': [UserView],
-            'testePerf': [UserView, ProfileView]
+            'profile': [UserView, ProfileView]
         };
 
         // import dummy data for testing purposes
