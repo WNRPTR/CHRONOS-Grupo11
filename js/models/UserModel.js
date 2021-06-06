@@ -4,5 +4,8 @@ export default class UserModel {
         this.username = username
         this.password = password
         this.type = type
+        this.kitchenPoints = 0
+        this.sportPoints = 0
+        this.bookPoints = 0
     }
 }

@@ -20,16 +20,31 @@ class App {
     #importDataFixtures() {
         const users = [
             {
+                id: 0,
+                username: 'admin',
+                password: 'admin',
+                type: 'admin',
+                kitchenPoints: 0,
+                sportPoints: 0,
+                bookPoints: 0
+            },
+            {
                 id: 1,
                 username: 'user1',
                 password: 'pass1',
-                type: 'user'
+                type: 'user',
+                kitchenPoints: 0,
+                sportPoints: 0,
+                bookPoints: 0
             },
             {
                 id: 2,
                 username: 'user2',
                 password: 'pass2',
-                type: 'user'
+                type: 'user',
+                kitchenPoints: 0,
+                sportPoints: 0,
+                bookPoints: 0
             }
         ];
 
