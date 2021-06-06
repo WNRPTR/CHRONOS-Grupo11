@@ -21,10 +21,10 @@
         <h5>Precisa de estar logado para poder usufruir do site</h5>
     </div> -->
     <div id="fullSite">
-        <nav class="navbar navbar-expand-md navbar-light bg-info">
+        <nav class="navbar navbar-expand-md navbar-light bg-info" width="100%">
             <div class="container-fluid">
-                <a class="navbar-brand" href="initialPage.html"><img src="logo 1-2.png" id="logo" width="30%"><img
-                        src="logo 2-2.png" id="logo" width="50"></a>
+                <a class="navbar-brand" href="initialPage.html"><img src="../img/logo 1-2.png" id="logo"
+                        width="30%"><img src="../img/logo 2-2.png" id="logo" width="50"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
                     aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -162,20 +162,23 @@
                 <div class="col-md-8">
                     <div class="panel panel-default">
                         <div class="panel-body">
-
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#about" role="tab"
-                                        aria-controls="home" aria-selected="true">Sobre</a>
+                                    <a class="nav-link active" id="about-tab" data-toggle="tab" href="#about" role="tab"
+                                        aria-controls="about" aria-selected="true">Sobre</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#trophies" role="tab"
-                                        aria-controls="profile" aria-selected="false">Troféus</a>
+                                    <a class="nav-link" id="trophies-tab" data-toggle="tab" href="#trophies" role="tab"
+                                        aria-controls="trophies" aria-selected="false">Trofeus</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="product-tab" data-toggle="tab" href="#addProduct" role="tab"
+                                        aria-controls="product" aria-selected="false">Adicionar produto</a>
                                 </li>
                             </ul>
-
-                            <div id="tab-content">
-                                <div id="about" class="tab-pane fade show active">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="about" role="tabpanel"
+                                    aria-labelledby="about-tab">
                                     <div class="row">
                                         <div class="col-md-6">
                                             Nome
@@ -221,49 +224,142 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div id="trophies" class="tab-pane fade in active">
-                                    <div class="row row-sm-cols-2" id="insertTrophies">
-                                        <div class="col-md-6">
-                                            <div class="card" style="width:18rem;">
-                                                <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                                                    class="card-img-top" alt="...">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Card title</h5>
-                                                    <h6 class="card-subtitle mb-2 text-muted ">Card subtitle</h6>
-                                                    <p class="card-text">Some quick example text to build on the card
-                                                        title
-                                                        and make up the bulk of the card's content.</p>
-                                                    b5
+                                <div class="tab-pane fade" id="trophies" role="tabpanel" aria-labelledby="trophies-tab">
+                                    <div class="row row-cols-sm-2 row-cols-md-4" style="row-gap: 6em;"
+                                        id="insertTrophies">
+                                        <div class="col">
+                                            <div class="card" style="width:8rem; height:8rem">
+                                                <img src="../img/trophyImg.png" class="card-img-top" alt="...">
+                                                <div class="card-body text-center">
+                                                    <h5 class="card-title">Aprendiz</h5>
+                                                    <p class="card-text">5 receitas</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="card" style="width:18rem;">
-                                                <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                                                    class="card-img-top" alt="...">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Card title</h5>
-                                                    <h6 class="card-subtitle mb-2 text-muted ">Card subtitle</h6>
-                                                    <p class="card-text">Some quick example text to build on the card
-                                                        title
-                                                        and make up the bulk of the card's content.</p>
-                                                    b5
+                                        <div class="col">
+                                            <div class="card" style="width:8rem; height:8rem">
+                                                <img src="../img/trophyImg.png" class="card-img-top" alt="...">
+                                                <div class="card-body text-center">
+                                                    <h5 class="card-title">Aprendiz</h5>
+                                                    <p class="card-text">5 receitas</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="card" style="width:18rem;">
-                                                <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                                                    class="card-img-top" alt="...">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Card title</h5>
-                                                    <h6 class="card-subtitle mb-2 text-muted ">Card subtitle</h6>
-                                                    <p class="card-text">Some quick example text to build on the card
-                                                        title
-                                                        and make up the bulk of the card's content.</p>
-                                                    b5
+                                        <div class="col">
+                                            <div class="card" style="width:8rem; height:8rem">
+                                                <img src="../img/trophyImg.png" class="card-img-top" alt="...">
+                                                <div class="card-body text-center">
+                                                    <h5 class="card-title">Aprendiz</h5>
+                                                    <p class="card-text">5 receitas</p>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="card" style="width:8rem; height:8rem">
+                                                <img src="../img/trophyImg.png" class="card-img-top" alt="...">
+                                                <div class="card-body text-center">
+                                                    <h5 class="card-title">Aprendiz</h5>
+                                                    <p class="card-text">5 receitas</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="card" style="width:8rem; height:8rem">
+                                                <img src="../img/trophyImg.png" class="card-img-top" alt="...">
+                                                <div class="card-body text-center">
+                                                    <h5 class="card-title">Aprendiz</h5>
+                                                    <p class="card-text">5 receitas</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="addProduct" role="tabpanel"
+                                    aria-labelledby="product-tab">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            Nome
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input id="txtAddProductName">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            Tipo
+                                        </div>
+                                        <div class="col-md-6">
+                                            <select class="form-select" id="sltProductType">
+                                                <option value="">Open this select menu</option>
+                                                <option value="recipe">Receita</option>
+                                                <option value="sport">Desporto</option>
+                                                <option value="book">Livro</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            Descrição
+                                        </div>
+                                        <div class="col-md-6">
+                                            <textarea name="message" rows="5" cols="46"
+                                                id="txtAddDescription"></textarea>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            Video link (imagem da capa no caso de livro)
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input id="txtAddVideoLink">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            Temas (para o livro)
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input id="txtAddThemes">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            Ingredientes (para receitas)
+                                        </div>
+                                        <div class="col-md-6">
+                                            <textarea name="message" rows="5" cols="46"
+                                                id="txtAddIngridients"></textarea>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            Duração (para receitas)
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input id="txtAddDuration">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            Lojas (para livro)
+                                        </div>
+                                        <div class="col-md-6">
+                                            <textarea name="message" rows="5" cols="46"
+                                                id="txtAddStoreLinks"></textarea>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <button class="btn btn-primary" type="button" id="AddProduct">Adicionar
+                                                Produto</button>
                                         </div>
                                     </div>
                                 </div>
