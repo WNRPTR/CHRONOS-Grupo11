@@ -37,11 +37,4 @@ export default class ProfileView {
             alert(`${type}, ${message}`);
     }
 
-
-    this.logoutButton.addEventListener('click', () => {
-        this.userController.logout();
-        //this.updateButtons('logout');
-        location.reload()
-        location.href = ('../index.html')
-    })
 }
