@@ -26,4 +26,9 @@ export default class ProfileView {
             }
         });
     }
+
+    displayMessage(message, type) {
+        this.messages =
+            alert(`${type}, ${message}`);
+    }
 }
