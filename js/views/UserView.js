@@ -76,7 +76,7 @@ export default class UserView {
     logOutFUnction() {
         this.logoutButton.addEventListener('click', () => {
             this.userController.logout();
-            this.updateSite('logout');
+            /* this.updateSite('logout'); */
             location.reload()
             location.href = ('../index.html')
         })
