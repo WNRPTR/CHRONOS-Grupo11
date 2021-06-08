@@ -26,6 +26,7 @@ export default class ProfileView {
                 console.log(e)
                 console.log(this.newPassword.value)
                 console.log(this.confirmNewPassword.value)
+                console.log(this.newPassword.value !== this.confirmNewPassord.value)
             }
         });
     }

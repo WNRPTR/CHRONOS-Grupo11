@@ -32,18 +32,12 @@ export default class UserController {
     isLogged() {
         return sessionStorage.getItem('loggedUser') !== null ? true : false;
     }
-
-    changePassword(newPassword) {
-        const username = sessionStorage.getItem('loggedUser')
-        this.users.find(user => user.username == username).password = newPassword
-    }
-
 }
 
 
 
 
-/* export default class ProfileController {
+export default class ProfileController {
     constructor() {
         this.users = localStorage.users ? JSON.parse(localStorage.users) : []
     }
@@ -53,4 +47,4 @@ export default class UserController {
         this.users.find(user => user.username == username).password = newPassword
     }
 
-} */
+}
