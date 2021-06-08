@@ -33,9 +33,9 @@ class App {
                 username: 'user1',
                 password: 'pass1',
                 type: 'user',
-                kitchenPoints: 0,
-                sportPoints: 0,
-                bookPoints: 0
+                kitchenPoints: 65,
+                sportPoints: 65,
+                bookPoints: 65
             },
             {
                 id: 2,
