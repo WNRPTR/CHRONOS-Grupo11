@@ -27,6 +27,10 @@ export default class UserView {
             this.logOutFUnction();
         }
 
+        this.addProduct = document.getElementById('addProduct');
+        this.addTrophy = document.getElementById('addTrophy');
+        this.usersBan = document.getElementById('usersBan');
+
 
         this.messages = document.querySelector('#messages')
         this.checkLoginStatus();
@@ -79,7 +83,7 @@ export default class UserView {
     }
 
     checkLoginStatus() {
-        if (this.userController.isAdmin()) {
+        if (this.userController.isLogged()) {
             this.updateSite('login'); 
         } else {
             this.updateSite('logout'); 
@@ -87,10 +91,10 @@ export default class UserView {
     }
 
     checkUserType() {
-        if (this.userController.isLogged()) {
-            this.updateSite('login'); 
+        if (this.userController.isAdmin()) {
+            this.updateUserSite('admin'); 
         } else {
-            this.updateSite('logout'); 
+            this.updateUserSite('user'); 
         }
     }
 
@@ -108,6 +112,20 @@ export default class UserView {
             case 'logout':
                 this.loginButton.style.visibility = 'visible'
                 this.logoutButton.style.visibility = 'hidden'
+        }
+    }
+
+    updateUserSite(event) {
+        switch (event) {
+            case 'admin':
+                this.addProduct.style.visibility = 'visible'
+                this.addTrophy.style.visibility = 'visible'
+                this.usersBan.style.visibility = 'visible'
+                break;
+            case 'user':
+                this.addProduct.style.visibility = 'hidden'
+                this.addTrophy.style.visibility = 'hidden'
+                this.usersBan.style.visibility = 'hidden'
         }
     }
 }
