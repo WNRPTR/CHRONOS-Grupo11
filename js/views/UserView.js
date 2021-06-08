@@ -56,7 +56,7 @@ export default class UserView {
                 location.href = ("../html/initialpage.html")
                 // Wait 1 second before reloading, so the user can see the login success message
                 setTimeout(() => {
-                    this.updateButtons('login');
+                    this.updateSite('login');
                     location.reload()
                 },
                     1000);
@@ -72,7 +72,7 @@ export default class UserView {
     logOutFUnction() {
         this.logoutButton.addEventListener('click', () => {
             this.userController.logout();
-            //this.updateButtons('logout');
+            this.updateSite('logout');
             location.reload()
             location.href=('../index.html')
         })
@@ -80,9 +80,9 @@ export default class UserView {
 
     checkLoginStatus() {
         if (this.userController.isLogged()) {
-            /* this.updateButtons('login'); */
+            this.updateSite('login'); 
         } else {
-            /* this.updateButtons('logout'); */
+            this.updateSite('logout'); 
         }
     }
 
@@ -91,7 +91,7 @@ export default class UserView {
             alert(`${type}, ${message}`);
     }
 
-    updateButtons(event) {
+    updateSite(event) {
         switch (event) {
             case 'login':
                 this.loginButton.style.visibility = 'hidden'
