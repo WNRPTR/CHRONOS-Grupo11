@@ -62,13 +62,15 @@ export default class UserView {
             }
         });
 
-        this.logoutButton.addEventListener('click', () => {
-            this.userController.logout();
-            //this.updateButtons('logout');
-            location.reload()
-        });
+        
     }
 
+    this.logoutButton.addEventListener('click', () => {
+        this.userController.logout();
+        //this.updateButtons('logout');
+        location.reload()
+        location.href=('../index.html')
+    })
 
 
     checkLoginStatus() {
