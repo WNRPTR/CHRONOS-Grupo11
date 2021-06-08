@@ -7,14 +7,13 @@ export default class ProfileView {
         // Password change DOM
         this.oldPassword = document.getElementById('oldPassword');
         this.newPassword = document.getElementById('newPassword');
-        this.confirNewPassword = document.getElementById('confirNewPassword');
+        this.confirNewPassword = document.getElementById('confirmNewPassword');
         this.btnNewPass = document.getElementById('btnNewPass');
         this.changePasswordForm();
 
     }
     changePasswordForm() {
         this.btnNewPass.addEventListener('click', () => {
-
             try {
                 if (this.newPassword.value !== this.confirmNewPassord.value) {
                     throw Error('A palavra pass nova não corresponde a sua confirmação!');
