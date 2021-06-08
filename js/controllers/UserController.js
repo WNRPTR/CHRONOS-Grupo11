@@ -35,8 +35,9 @@ export default class UserController {
 
 
     isAdmin() {
-        const username = sessionsStora.getIem('loggedUser')
-        return this.users.find(user => user.username = username).type !== admin ? true : false
+        const username = sessionStorage.getItem('loggedUser')
+        return this.users.find(user => user.username == username).type == 'admin' ? true : false
+
     }
 }
 

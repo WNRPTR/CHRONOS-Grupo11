@@ -30,6 +30,7 @@ export default class UserView {
         this.addProduct = document.getElementById('addProduct-tab');
         this.addTrophy = document.getElementById('addTrophy-tab');
         this.usersBan = document.getElementById('usersBan-tab');
+        this.checkUserType();
 
 
         this.messages = document.querySelector('#messages')
