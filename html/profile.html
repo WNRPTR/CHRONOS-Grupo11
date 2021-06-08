@@ -88,6 +88,8 @@
                         <br>
                         <button class="btn btn-primary" type="button" id="btnNewPass">Mudar Password</button>
                     </div>
+                    <br>
+                    <br>
                 </div>
                 <!-- <div class="col-md-8">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -168,15 +170,19 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="trophies-tab" data-toggle="tab" href="#trophies" role="tab"
-                                        aria-controls="trophies" aria-selected="false">Trofeus</a>
+                                        aria-controls="trophies" aria-selected="false">Troféus</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="product-tab" data-toggle="tab" href="#addProduct" role="tab"
-                                        aria-controls="product" aria-selected="false">Pro.Add</a>
+                                        aria-controls="product" aria-selected="false">Adicionar Produto</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="AddTrophy-tab" data-toggle="tab" href="#addTrophy"
-                                        role="tab" aria-controls="addTrophy" aria-selected="false">Tro.add</a>
+                                    <a class="nav-link" id="addTrophy-tab" data-toggle="tab" href="#addTrophy"
+                                        role="tab" aria-controls="addTrophy" aria-selected="false">Adicionar Troféu</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="usersBan-tab" data-toggle="tab" href="#usersBan" role="tab"
+                                        aria-controls="usersBan" aria-selected="false">Utilizadores</a>
                                 </li>
                             </ul>
                             <div class="tab-content" id="myTabContent">
@@ -307,7 +313,7 @@
                                             Descrição
                                         </div>
                                         <div class="col-md-6">
-                                            <textarea name="message" rows="5" cols="46"
+                                            <textarea name="message" rows="5" cols="38"
                                                 id="txtAddDescription"></textarea>
                                         </div>
                                     </div>
@@ -335,7 +341,7 @@
                                             Ingredientes (para receitas)
                                         </div>
                                         <div class="col-md-6">
-                                            <textarea name="message" rows="5" cols="46"
+                                            <textarea name="message" rows="5" cols="38"
                                                 id="txtAddIngridients"></textarea>
                                         </div>
                                     </div>
@@ -354,7 +360,7 @@
                                             Lojas (para livro)
                                         </div>
                                         <div class="col-md-6">
-                                            <textarea name="message" rows="5" cols="46"
+                                            <textarea name="message" rows="5" cols="38"
                                                 id="txtAddStoreLinks"></textarea>
                                         </div>
                                     </div>
@@ -395,7 +401,7 @@
                                             Descrição
                                         </div>
                                         <div class="col-md-6">
-                                            <textarea name="message" rows="5" cols="46"
+                                            <textarea name="message" rows="5" cols="38"
                                                 id="txtAddTrophyText"></textarea>
                                         </div>
                                     </div>
@@ -413,6 +419,17 @@
                                         <div class="col-md-6">
                                             <button class="btn btn-primary" type="button" id="AddTrophy">Adicionar
                                                 Troféu</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade show active" id="usersBan" role="tabpanel"
+                                    aria-labelledby="usersBan-tab">
+                                    <div class="row">
+                                        <div class="col-md-6" id="insertBanButton">
+                                            [nome do user]
+                                        </div>
+                                        <div class="col-md-6" id="insertBtnBanUser">
+                                            [por botao de banir]
                                         </div>
                                     </div>
                                 </div>
