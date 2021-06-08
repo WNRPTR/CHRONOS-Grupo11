@@ -79,6 +79,14 @@ export default class UserView {
     }
 
     checkLoginStatus() {
+        if (this.userController.isAdmin()) {
+            this.updateSite('login'); 
+        } else {
+            this.updateSite('logout'); 
+        }
+    }
+
+    checkUserType() {
         if (this.userController.isLogged()) {
             this.updateSite('login'); 
         } else {
