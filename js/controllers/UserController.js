@@ -37,7 +37,7 @@ export default class UserController {
 
 
 
-export default class ProfileController {
+export class ProfileController {
     constructor() {
         this.users = localStorage.users ? JSON.parse(localStorage.users) : []
     }
