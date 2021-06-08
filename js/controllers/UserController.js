@@ -36,7 +36,7 @@ export default class UserController {
 
     isAdmin() {
         const username = sessionsStora.getIem('loggedUser')
-        return this.users.find(user => user.username = username).username == admin ? true : false
+        return this.users.find(user => user.username = username).type !== admin ? true : false
     }
 }
 

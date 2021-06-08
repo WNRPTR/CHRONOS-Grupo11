@@ -27,9 +27,9 @@ export default class UserView {
             this.logOutFUnction();
         }
 
-        this.addProduct = document.getElementById('addProduct');
-        this.addTrophy = document.getElementById('addTrophy');
-        this.usersBan = document.getElementById('usersBan');
+        this.addProduct = document.getElementById('addProduct-tab');
+        this.addTrophy = document.getElementById('addTrophy-tab');
+        this.usersBan = document.getElementById('usersBan-tab');
 
 
         this.messages = document.querySelector('#messages')
@@ -60,7 +60,7 @@ export default class UserView {
                 location.href = ("../html/initialpage.html")
                 // Wait 1 second before reloading, so the user can see the login success message
                 setTimeout(() => {
-                    this.updateSite('login');
+                    /* this.updateSite('login'); */
                     location.reload()
                 },
                     1000);
@@ -70,7 +70,7 @@ export default class UserView {
             }
         });
 
-        
+
     }
 
     logOutFUnction() {
@@ -78,23 +78,23 @@ export default class UserView {
             this.userController.logout();
             this.updateSite('logout');
             location.reload()
-            location.href=('../index.html')
+            location.href = ('../index.html')
         })
     }
 
     checkLoginStatus() {
         if (this.userController.isLogged()) {
-            this.updateSite('login'); 
+            /* this.updateSite('login'); */
         } else {
-            this.updateSite('logout'); 
+            /* this.updateSite('logout'); */
         }
     }
 
     checkUserType() {
         if (this.userController.isAdmin()) {
-            this.updateUserSite('admin'); 
+            this.updateUserSite('admin');
         } else {
-            this.updateUserSite('user'); 
+            this.updateUserSite('user');
         }
     }
 
@@ -103,7 +103,7 @@ export default class UserView {
             alert(`${type}, ${message}`);
     }
 
-    updateSite(event) {
+    /* updateSite(event) {
         switch (event) {
             case 'login':
                 this.loginButton.style.visibility = 'hidden'
@@ -113,7 +113,7 @@ export default class UserView {
                 this.loginButton.style.visibility = 'visible'
                 this.logoutButton.style.visibility = 'hidden'
         }
-    }
+    } */
 
     updateUserSite(event) {
         switch (event) {

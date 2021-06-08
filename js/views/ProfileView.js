@@ -9,6 +9,7 @@ export default class ProfileView {
         this.newPassword = document.querySelector('#newPassword');
         this.confirmNewPassword = document.querySelector('#confirmNewPassword');
         this.btnNewPass = document.querySelector('#btnNewPass');
+        this.logoutButton = document.querySelector('btnLogout');
         this.changePasswordForm();
 
     }
@@ -35,4 +36,12 @@ export default class ProfileView {
         this.messages =
             alert(`${type}, ${message}`);
     }
+
+
+    this.logoutButton.addEventListener('click', () => {
+        this.userController.logout();
+        //this.updateButtons('logout');
+        location.reload()
+        location.href = ('../index.html')
+    })
 }
