@@ -1,8 +1,8 @@
-import UserController from '../controllers/UserController.js'
+import ProfileController from '../controllers/UserController.js'
 
 export default class ProfileView {
     constructor() {
-        this.userController = new UserController();
+        this.ProfileController = new ProfileController();
 
         // Password change DOM
         this.oldPassword = document.querySelector('#oldPassword');
