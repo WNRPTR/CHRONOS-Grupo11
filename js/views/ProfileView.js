@@ -5,10 +5,10 @@ export default class ProfileView {
         this.userController = new UserController();
 
         // Password change DOM
-        this.oldPassword = document.getElementById('oldPassword');
-        this.newPassword = document.getElementById('newPassword');
-        this.confirNewPassword = document.getElementById('confirmNewPassword');
-        this.btnNewPass = document.getElementById('btnNewPass');
+        this.oldPassword = document.querySelector('#oldPassword');
+        this.newPassword = document.querySelector('#newPassword');
+        this.confirmNewPassword = document.querySelector('#confirmNewPassword');
+        this.btnNewPass = document.querySelector('#btnNewPass');
         this.changePasswordForm();
 
     }
@@ -23,6 +23,9 @@ export default class ProfileView {
 
             } catch (e) {
                 this.displayMessage(e, 'danger');
+                console.log(e)
+                console.log(this.newPassword.value)
+                console.log(this.confirmNewPassword.value)
             }
         });
     }
