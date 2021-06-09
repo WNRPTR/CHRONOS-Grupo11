@@ -8,6 +8,11 @@ export default class ProfileView {
         this.trophyController = new TrophyController();
         this.categoryController = new CategoryController();
 
+        //user list for admin ban
+        this.userList = document.querySelector('#userList');
+        this.btnBanUser = document.querySelector('#btnBanUser');
+        this.banForm();
+
         //category data to create a new activity
         this.txtAddProductName = document.querySelector('#txtAddProductName');
         this.sltProductType = document.querySelector('#sltProductType');
@@ -95,4 +100,9 @@ export default class ProfileView {
             this.categoryController.addProduct(txtAddProductName.value, sltProductType.value, txtAddDescription.value, txtAddVideoLink.value, txtAddThemes.value, txtAddIngridients.value, txtAddDuration.value, txtAddStoreLinks.value,)
         })
     }
+
+    banForm() {
+        
+    }
+
 }
