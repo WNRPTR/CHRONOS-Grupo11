@@ -5,6 +5,19 @@ export default class ProfileView {
     constructor() {
         this.userController = new UserController();
         this.trophyController = new TrophyController();
+        this.catagoryController = new Categorycontroller();
+
+        //category data to create a new activity
+        this.txtAddProductName = document.querySelector('#txtAddProductName');
+        this.sltProductType = document.querySelector('#sltProductType');
+        this.txtAddDescription = document.querySelector('#txtAddDescription');
+        this.txtAddVideoLink = document.querySelector('#txtAddVideoLink');
+        this.txtAddThemes = document.querySelector('#txtAddThemes');
+        this.txtAddIngridients = document.querySelector('#txtAddIngridients');
+        this.txtAddDuration = document.querySelector('#txtAddDuration');
+        this.txtAddStoreLinks = document.querySelector('#txtAddStoreLinks');
+        this.btnAddProduct = document.querySelector('#btnAddProduct');
+        this.bindProducts();
 
         //trophies data 
         this.txtAddTrophyName = document.querySelector('#txtAddTrophyName');
@@ -73,6 +86,12 @@ export default class ProfileView {
     bindTrophies() {
         this.btnAddTrophy.addEventListener('click', () => {
             this.trophyController.addTrophy(txtAddTrophyName.value, sltTrophyType.value, txtAddTrophyText.value, txtAddPoints.value)
+        })
+    }
+
+    bindProducts() {
+        this.btnAddProduct.addEventListener('click', () => {
+            this.categoryController.addproduct(txtAddProductName.value, sltProductType.value, txtAddDescription.value, txtAddVideoLink.value, txtAddThemes.value, txtAddIngridients.value, txtAddDuration.value, txtAddStoreLinks.value, )
         })
     }
 }
