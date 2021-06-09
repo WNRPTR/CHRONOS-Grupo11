@@ -116,7 +116,6 @@ export default class ProfileView {
     banUser() {
         for (const btnBanUser of this.btnBanUser) {
             btnBanUser.addEventListener('click', event => {
-                console.log('nadansd')
                 this.userController.removeUser(event.target.id)
                 location.reload(1000)
                 this.banForm()
