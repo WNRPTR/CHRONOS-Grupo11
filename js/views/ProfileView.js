@@ -153,7 +153,53 @@ export default class ProfileView {
 
     generateTrophiesCard(kitchenTrophies,sportTrophies,bookTrophies){
 
-        
+        const userPoints = this.userController.getUserPoints()
+
+        const kitchen = userPoints[0]
+        const sport = userPoints[1]
+        const book = userPoints[2]
+
+        for (const category of kitchenTrophies) {
+            if (kitchen >= kitchenTrophies[category].points) {
+                this.insertTrophies.innerHTML += `<div class="col">
+                        <div class="card" style="width:8rem; height:8rem">
+                        <img src="../img/trophyImg.png" class="card-img-top" alt="...">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">${kitchenTrophies[category].name}</h5>
+                            <p class="card-text">${kitchenTrophies[category].text}</p>
+                        </div>
+                    </div>
+                </div>`
+            } 
+        }
+
+        for (const category of sportTrophies) {
+            if (sport >= sportTrophies[category].points) {
+                this.insertTrophies.innerHTML += `<div class="col">
+                        <div class="card" style="width:8rem; height:8rem">
+                        <img src="../img/trophyImg.png" class="card-img-top" alt="...">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">${sportTrophies[category].name}</h5>
+                            <p class="card-text">${sportTrophies[category].text}</p>
+                        </div>
+                    </div>
+                </div>`
+            } 
+        }
+
+        for (const category of bookTrophies) {
+            if (book >= bookTrophies[category].points) {
+                this.insertTrophies.innerHTML += `<div class="col">
+                        <div class="card" style="width:8rem; height:8rem">
+                        <img src="../img/trophyImg.png" class="card-img-top" alt="...">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">${bookTrophies[category].name}</h5>
+                            <p class="card-text">${bookTrophies[category].text}</p>
+                        </div>
+                    </div>
+                </div>`
+            } 
+        }
 
     }
 
