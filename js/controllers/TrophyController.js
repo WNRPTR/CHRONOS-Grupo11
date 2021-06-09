@@ -11,4 +11,6 @@ export default class TrophyController {
         localStorage.setItem('trophies', JSON.stringify(this.trophies));
         location.reload();
     }
+
+
 }
