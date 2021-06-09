@@ -103,13 +103,10 @@ export default class ProfileView {
 
     banForm() {
         const userList = this.userController.getUserNames()
-        for (let user in userList){
-            this.userList.innerHTML += ` <div class="col-md-6">${user}</div>
-                                        <div class="col-md-6"><input id="btnBanUser" type="button">Banir</div>`            
+        for (let user in userList) {
+            this.userList.innerHTML += ` <hr><div class="col-md-6">${userList[user]}</div>
+                                        <div class="col-md-6"><button class="btn btn-danger" id="btnBanUser">Banir</button></div>`
         }
-
-
-        
     }
 
 }

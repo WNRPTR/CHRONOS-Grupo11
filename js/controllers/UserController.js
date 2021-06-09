@@ -42,7 +42,6 @@ export default class UserController {
     }
     getUserData() {
         return this.users.find(user => user.username == this.currentUser)
-
     }
 
     changePassword(newPassword) {
@@ -51,5 +50,17 @@ export default class UserController {
         localStorage.setItem('users', JSON.stringify(this.users))
         location.reload(1000)
         console.log(this.users.find(user => user.username == username).password)
+    }
+
+    getUserNames() {
+        let usernames = []
+        for (let user in this.users) {
+            if (this.users[user].username !== this.currentUser) {
+                usernames.push(this.users[user].username)
+            }
+        }
+        console.log(usernames)
+
+        return usernames
     }
 }
