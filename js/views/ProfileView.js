@@ -8,6 +8,10 @@ export default class ProfileView {
         this.trophyController = new TrophyController();
         this.categoryController = new CategoryController();
 
+        //function to unlock trophies
+        this.insertTrophies = document.querySelector('#insertTrophies')
+        this.confirmTrophy();
+
         //user list for admin ban
         this.userList = document.querySelector('#userList');
         this.btnBanUser = document.getElementsByClassName('banUser');
@@ -112,7 +116,6 @@ export default class ProfileView {
         }
     }
 
-
     banUser() {
         for (const btnBanUser of this.btnBanUser) {
             btnBanUser.addEventListener('click', event => {
@@ -121,6 +124,37 @@ export default class ProfileView {
                 this.banForm()
             })
         }
+    }
+
+    confirmTrophy() {
+        const feedData = this.trophyController.getTrophyData()
+
+        const kitchenTrophies = []
+        const sportTrophies = []
+        const bookTrophies = []
+        
+        for (let category of feedData){
+            if (feedData[category].trophyType == 'kitchen') {
+                kitchenTrophies.push(feedData[category])
+
+            } else if (feedData[category].trophyType == 'sport') {
+                sportTrophies.push(feedData[category])
+
+            } else {
+                bookTrophies.push(feedData[category])
+
+            }
+
+        }
+
+        generateTrophiesCard(kitchenTrophies,sportTrophies,bookTrophies)
+
+    }
+
+    generateTrophiesCard(kitchenTrophies,sportTrophies,bookTrophies){
+
+        
+
     }
 
 }
