@@ -72,7 +72,7 @@ export default class ProfileView {
 
     bindTrophies() {
         this.btnAddTrophy.addEventListener('click', () => {
-            this.trophyController.addTrophy(txtAddTrophyName, sltTrophyType, txtAddTrophyText, txtAddPoints)
+            this.trophyController.addTrophy(txtAddTrophyName.value, sltTrophyType.value, txtAddTrophyText.value, txtAddPoints.value)
         })
     }
 }
