@@ -12,6 +12,19 @@ export default class ProfileView {
         this.logoutButton = document.querySelector('btnLogout');
         this.changePasswordForm();
 
+        //user points data for up info
+        this.pointsKitchen = document.querySelector('#pointsKitchen');
+        this.pointsSport = document.querySelector('#pointsSport');
+        this.pointsBook = document.querySelector('#pointsBook'); 
+
+        //User data for info table
+        this.insertName = document.querySelector('#insertName');
+        this.insertTotalPoints = document.querySelector('#insertTotalPoints');
+        this.insertRecipeNumber = document.querySelector('#insertRecipeNumber');
+        this.insertSportNumber = document.querySelector('#insertSportNumber');
+        this.insertBookNumber = document.querySelector('#insertBookNumber');
+        this.completeForm();
+
     }
     changePasswordForm() {
         this.btnNewPass.addEventListener('click', () => {
@@ -35,6 +48,15 @@ export default class ProfileView {
     displayMessage(message, type) {
         this.messages =
             alert(`${type}, ${message}`);
+    }
+
+    completeForm(){
+        this.userController.getUserData();
+        this.pointsKitchen.innerHTML=kitchenPoints
+        this.pointsSport.innerHTML=sportPoints
+        this.pointsBook.innerHTML=bookPoints
+        this.insertName.innerHTML=userName
+        
     }
 
 }
