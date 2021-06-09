@@ -6,7 +6,7 @@ export default class TrophyController {
         this.trophies = localStorage.trophies ? JSON.parse(localStorage.trophies) : []
     }
 
-    addTrophy(name, type, text, points) {
+    addTrophy(name, trophyType, text, points) {
         this.trophies.push(new TrophyModel(name, trophyType, text, points));
     }
 }
