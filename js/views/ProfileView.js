@@ -67,7 +67,7 @@ export default class ProfileView {
     changePasswordForm() {
         this.btnNewPass.addEventListener('click', () => {
             try {
-                if (this.newPassword.value !== this.confirmNewPassword.value) {
+                if (this.newPassword.value !== this.confirmNewPassword.value || this.userController.isOldPass(this.oldPassword.value) === false) {
                     throw Error('A palavra pass nova não corresponde a sua confirmação!');
                 }
                 this.userController.changePassword(this.newPassword.value);

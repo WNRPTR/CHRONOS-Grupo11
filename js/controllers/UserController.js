@@ -44,6 +44,11 @@ export default class UserController {
         return this.users.find(user => user.username == this.currentUser)
     }
 
+    isOldPass(oldPassword) {
+        const username = sessionStorage.getItem('loggedUser')
+        return this.users.find(user => user.username == username).password == oldPassword ? true : false
+    }
+
     changePassword(newPassword) {
         const username = sessionStorage.getItem('loggedUser')
         this.users.find(user => user.username == username).password = newPassword
