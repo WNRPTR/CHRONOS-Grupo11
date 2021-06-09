@@ -55,4 +55,16 @@ export class ProfileController {
         this.users.find(user => user.username == username).password = newPassword
     }
 
+
+
+    getUserData() {
+        const username = sessionStorage.getItem('loggedUser')
+        userName = this.users.find(user => user.username == username).username
+        kitchenPoints = this.users.find(user => user.username == username).kitchenPoints
+        sportPoints = this.users.find(user => user.username == username).sportPoints
+        bookPoints = this.users.find(user => user.username == username).bookPoints
+
+        return userName, kitchenPoints, sportPoints, bookpoints
+    }
+
 }
