@@ -1,4 +1,4 @@
-import TrophyModel from '../models/CategoryModel.js'
+import CategoryModel from '../models/CategoryModel.js'
 
 export default class CategoryController {
 
@@ -9,8 +9,8 @@ export default class CategoryController {
 
 
     addProduct(name, CategoryType, description, videoLink, themes, ingridients, duration, storeLink, likes, comments) {
-        this.trophies.push(new TrophyModel(name, trophyType, text, points));
-        localStorage.setItem('trophies', JSON.stringify(this.trophies));
+        this.categorys.push(new CategoryModel(name, CategoryType, description, videoLink, themes, ingridients, duration, storeLink, likes, comments));
+        localStorage.setItem('categorys', JSON.stringify(this.categorys));
         location.reload();
     }
 }
