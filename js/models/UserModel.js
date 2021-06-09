@@ -7,6 +7,5 @@ export default class UserModel {
         this.kitchenPoints = 0
         this.sportPoints = 0
         this.bookPoints = 0
-        this.trophies = []
     }
 }

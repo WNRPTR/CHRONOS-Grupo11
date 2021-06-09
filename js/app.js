@@ -27,7 +27,7 @@ class App {
                 kitchenPoints: 0,
                 sportPoints: 0,
                 bookPoints: 0,
-                trophies: []
+
             },
             {
                 id: 1,
@@ -37,7 +37,7 @@ class App {
                 kitchenPoints: 65,
                 sportPoints: 65,
                 bookPoints: 65,
-                trophies: []
+
             },
             {
                 id: 2,
@@ -47,7 +47,7 @@ class App {
                 kitchenPoints: 0,
                 sportPoints: 0,
                 bookPoints: 0,
-                trophies: []
+
             }
         ];
 
