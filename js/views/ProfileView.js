@@ -12,7 +12,7 @@ export default class ProfileView {
         this.txtAddTrophyText = document.querySelector('#txtAddTrophyText');
         this.txtAddPoints = document.querySelector('#txtAddPoints');
         this.btnAddTrophy = document.querySelector('#btnAddTrophy');
-        this.bindTrofies();
+        this.bindTrophies();
 
         // Password change DOM
         this.oldPassword = document.querySelector('#oldPassword');
@@ -70,7 +70,9 @@ export default class ProfileView {
         this.insertSportNumber.innerHTML = currentUser.bookPoints / 5
     }
 
-    bindTrofies(){
-        
+    bindTrophies() {
+        this.btnAddTrophy.addEventListener('click', () => {
+            this.trophyController.addTrophy(txtAddTrophyName,sltTrophyType,txtAddTrophyText,txtAddPoints)
+        }
     }
 }
