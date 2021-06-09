@@ -13,7 +13,7 @@ export default class TrophyController {
     }
 
     getTrophyData() {
-        const trophyList = localStorage.getItem('users', JSON.stringify(this.trophies))
+        const trophyList = localStorage.getItem('trophies', JSON.stringify(this.trophies))
         return trophyList
     }
 }
