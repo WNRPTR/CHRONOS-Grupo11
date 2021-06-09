@@ -1,9 +1,11 @@
 import UserController from '../controllers/UserController.js'
-import trophy from '../controllers/TrophyController.js'
+import TrophyController from '../controllers/TrophyController.js'
 
 export default class ProfileView {
     constructor() {
         this.userController = new UserController();
+        this.trophyController = new TrophyController();
+
 
         // Password change DOM
         this.oldPassword = document.querySelector('#oldPassword');
@@ -28,11 +30,6 @@ export default class ProfileView {
 
     }
 
-    constructor() {
-        this.trophyController = new TrophyController();
-    
-    
-    }
 
     changePasswordForm() {
         this.btnNewPass.addEventListener('click', () => {
