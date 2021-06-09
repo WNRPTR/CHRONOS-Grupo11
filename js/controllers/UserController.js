@@ -74,10 +74,10 @@ export default class UserController {
 
 
     getUserPoints() {
-        categoryPoints = []
-        kitchen = this.users.find(user => user.username == this.currentUser).kitchenPoints
-        sport = this.users.find(user => user.username == this.currentUser).sportPoints
-        book = this.users.find(user => user.username == this.currentUser).bookPoints
+        const categoryPoints = []
+        const kitchen = this.users.find(user => user.username == this.currentUser).kitchenPoints
+        const sport = this.users.find(user => user.username == this.currentUser).sportPoints
+        const book = this.users.find(user => user.username == this.currentUser).bookPoints
         categoryPoints.push(kitchen)
         categoryPoints.push(sport)
         categoryPoints.push(book)
