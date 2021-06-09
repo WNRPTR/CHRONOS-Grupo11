@@ -10,7 +10,7 @@ export default class ProfileView {
 
         //user list for admin ban
         this.userList = document.querySelector('#userList');
-        this.btnBanUser = document.querySelector('#btnBanUser');
+        this.btnBanUser = document.getElementsByClassName('banUser');
         this.banForm();
 
         //category data to create a new activity
@@ -105,7 +105,19 @@ export default class ProfileView {
         const userList = this.userController.getUserNames()
         for (let user in userList) {
             this.userList.innerHTML += ` <hr><div class="col-md-6">${userList[user]}</div>
-                                        <div class="col-md-6"><button class="btn btn-danger" id="btnBanUser">Banir</button></div>`
+                                        <div class="col-md-6"><button type="button" class="btn btn-danger banUser" id="${userList[user]}">Banir</button></div>`
+        }
+    }
+
+
+    banUser() {
+        for (const btnBanUser of this.btnBanUser) {
+            btnBanUser.addEventListener('click', event => {
+                console.log('nadansd')
+                this.userController.removeUser(event.target.id)
+                location.reload(1000)
+                this.banForm()
+            })
         }
     }
 

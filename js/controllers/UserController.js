@@ -63,4 +63,11 @@ export default class UserController {
 
         return usernames
     }
+
+
+    removeUser(username) {
+        this.users = this.users.filter(user => user.username != username)
+        localStorage.setItem('users', JSON.stringify(this.users))
+        location.reload(1000)
+    }
 }
