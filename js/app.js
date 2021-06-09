@@ -54,22 +54,20 @@ class App {
 
         const trophies = [
             {
-
-                username: 'Aprendiz Comilão',
-                type: 'kitchen',
+                name: 'Aprendiz Comilão',
+                trophyType: 'kitchen',
                 text: 'ver 2 receitas',
                 points: 10,
-
             },
             {
-                username: 'Não sdentário',
-                type: 'sport',
+                name: 'Não sdentário',
+                trophyType: 'sport',
                 text: 'ver 2 desportos',
                 points: 10,
             },
             {
-                username: 'Jovem aprendedor',
-                type: 'book',
+                name: 'Jovem aprendedor',
+                trophyType: 'book',
                 text: 'ver 2 livros',
                 points: 10,
             }
