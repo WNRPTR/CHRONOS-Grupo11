@@ -6,13 +6,20 @@ export default class ProfileView {
         this.userController = new UserController();
         this.trophyController = new TrophyController();
 
+        //trophies data 
+        this.txtAddTrophyName = document.querySelector('#txtAddTrophyName');
+        this.sltTrophyType = document.querySelector('#sltTrophyType');
+        this.txtAddTrophyText = document.querySelector('#txtAddTrophyText');
+        this.txtAddPoints = document.querySelector('#txtAddPoints');
+        this.btnAddTrophy = document.querySelector('#btnAddTrophy');
+        this.bindTrofies();
 
         // Password change DOM
         this.oldPassword = document.querySelector('#oldPassword');
         this.newPassword = document.querySelector('#newPassword');
         this.confirmNewPassword = document.querySelector('#confirmNewPassword');
         this.btnNewPass = document.querySelector('#btnNewPass');
-        this.logoutButton = document.querySelector('btnLogout');
+        this.logoutButton = document.querySelector('#btnLogout');
         this.changePasswordForm();
 
         //user points data for up info
@@ -63,4 +70,7 @@ export default class ProfileView {
         this.insertSportNumber.innerHTML = currentUser.bookPoints / 5
     }
 
+    bindTrofies(){
+        
+    }
 }
