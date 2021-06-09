@@ -51,9 +51,34 @@ class App {
             }
         ];
 
+
+        const trophies = [
+            {
+
+                username: 'Aprendiz Comilão',
+                type: 'kitchen',
+                text: 'ver 2 receitas',
+                points: 10,
+
+            },
+            {
+                username: 'Não sdentário',
+                type: 'sport',
+                text: 'ver 2 desportos',
+                points: 10,
+            },
+            {
+                username: 'Jovem aprendedor',
+                type: 'book',
+                text: 'ver 2 livros',
+                points: 10,
+            }
+        ];
+
         // Load the fixtures in case there is no data in the local storage 
         if (!localStorage.users) {
             localStorage.setItem('users', JSON.stringify(users));
+            localStorage.setItem('trophies', JSON.stringify(trophies));
         }
     }
 
