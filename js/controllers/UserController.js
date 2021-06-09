@@ -70,4 +70,16 @@ export default class UserController {
         localStorage.setItem('users', JSON.stringify(this.users))
         location.reload(1000)
     }
+
+
+
+    getUserPoints() {
+        categoryPoins = []
+        kitchen = this.users.find(user => user.username == this.currentUser).kitchenPoints
+        sport = this.users.find(user => user.username == this.currentUser).sportPoints
+        book = this.users.find(user => user.username == this.currentUser).bookPoints
+        categoryPoins.push(kitchen)
+        categoryPoins.push(sport)
+        categoryPoins.push(book)
+    }
 }

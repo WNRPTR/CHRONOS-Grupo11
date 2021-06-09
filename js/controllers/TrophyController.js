@@ -12,5 +12,8 @@ export default class TrophyController {
         location.reload();
     }
 
-
+    getTrophyData() {
+        const trophyList = localStorage.getItem('users', JSON.stringify(this.trophies))
+        return trophyList
+    }
 }
