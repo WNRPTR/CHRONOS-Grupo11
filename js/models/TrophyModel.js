@@ -1,7 +1,7 @@
 export default class TrophyModel {
-    constructor(name, type, text, points) {
+    constructor(name, trophyType, text, points) {
         this.name = name
-        this.trophyTtype = type
+        this.trophyType = trophyType
         this.text = text
         this.points = points
     }

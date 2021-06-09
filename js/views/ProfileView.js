@@ -1,11 +1,12 @@
 import UserController from '../controllers/UserController.js'
 import TrophyController from '../controllers/TrophyController.js'
+import CategoryController from '../controllers/CategoryController.js'
 
 export default class ProfileView {
     constructor() {
         this.userController = new UserController();
         this.trophyController = new TrophyController();
-        this.catagoryController = new Categorycontroller();
+        this.categoryController = new CategoryController();
 
         //category data to create a new activity
         this.txtAddProductName = document.querySelector('#txtAddProductName');
@@ -91,7 +92,7 @@ export default class ProfileView {
 
     bindProducts() {
         this.btnAddProduct.addEventListener('click', () => {
-            this.categoryController.addproduct(txtAddProductName.value, sltProductType.value, txtAddDescription.value, txtAddVideoLink.value, txtAddThemes.value, txtAddIngridients.value, txtAddDuration.value, txtAddStoreLinks.value, )
+            this.categoryController.addproduct(txtAddProductName.value, sltProductType.value, txtAddDescription.value, txtAddVideoLink.value, txtAddThemes.value, txtAddIngridients.value, txtAddDuration.value, txtAddStoreLinks.value,)
         })
     }
 }
