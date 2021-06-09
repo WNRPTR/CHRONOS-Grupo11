@@ -48,6 +48,7 @@ export default class UserController {
     changePassword(newPassword) {
         const username = sessionStorage.getItem('loggedUser')
         this.users.find(user => user.username == username).password = newPassword
+        localStorage.setItem('users', JSON.stringify(this.users))
         location.reload(1000)
         console.log(this.users.find(user => user.username == username).password)
     }
