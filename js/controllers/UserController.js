@@ -4,6 +4,7 @@ export default class UserController {
 
     constructor() {
         this.users = localStorage.users ? JSON.parse(localStorage.users) : []
+        this.currentUser = sessionStorage.loggedUser ? sessionStorage.loggedUser : null
     }
 
     register(username, password, type) {
@@ -39,6 +40,10 @@ export default class UserController {
         return this.users.find(user => user.username == username).type == 'admin' ? true : false
 
     }
+    getUserData() {
+        return this.users.find(user => user.username == this.currentUser)
+
+    }
 }
 
 
@@ -48,6 +53,7 @@ export default class UserController {
 export class ProfileController {
     constructor() {
         this.users = localStorage.users ? JSON.parse(localStorage.users) : []
+        this.currentUser = sessionStorage.getItem('loggedUser') ? sessionStorage.getItem('loggedUser') : null
     }
 
     changePassword(newPassword) {
@@ -55,16 +61,10 @@ export class ProfileController {
         this.users.find(user => user.username == username).password = newPassword
     }
 
-
-
     getUserData() {
-        const username = sessionStorage.getItem('loggedUser')
-        userName = this.users.find(user => user.username == username).username
-        kitchenPoints = this.users.find(user => user.username == username).kitchenPoints
-        sportPoints = this.users.find(user => user.username == username).sportPoints
-        bookPoints = this.users.find(user => user.username == username).bookPoints
-
-        return userName, kitchenPoints, sportPoints, bookpoints
+        /* result = this.users.find(user => user.username == this.currentUser) */
+        let username = 'asdjadkajsdh'
+        return username
     }
 
 }

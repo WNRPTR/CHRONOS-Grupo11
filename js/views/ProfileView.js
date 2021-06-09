@@ -1,8 +1,10 @@
 import ProfileController from '../controllers/UserController.js'
+import UserController from '../controllers/UserController.js'
 
 export default class ProfileView {
     constructor() {
         this.ProfileController = new ProfileController();
+        this.userController = new UserController();
 
         // Password change DOM
         this.oldPassword = document.querySelector('#oldPassword');
@@ -15,7 +17,7 @@ export default class ProfileView {
         //user points data for up info
         this.pointsKitchen = document.querySelector('#pointsKitchen');
         this.pointsSport = document.querySelector('#pointsSport');
-        this.pointsBook = document.querySelector('#pointsBook'); 
+        this.pointsBook = document.querySelector('#pointsBook');
 
         //User data for info table
         this.insertName = document.querySelector('#insertName');
@@ -50,13 +52,16 @@ export default class ProfileView {
             alert(`${type}, ${message}`);
     }
 
-    completeForm(){
-        this.userController.getUserData(this.pointsKitchenthis.pointsSport,this.pointsBook,this.insertName)
-        this.pointsKitchen.innerHTML=kitchenPoints
-        this.pointsSport.innerHTML=sportPoints
-        this.pointsBook.innerHTML=bookPoints
-        this.insertName.innerHTML=userName
-        
+    completeForm() {
+        const currentUser = this.userController.getUserData()
+        this.insertName.innerHTML = currentUser.username
+        this.pointsKitchen.innerHTML += currentUser.kitchenPoints
+        this.pointsSport.innerHTML += currentUser.sportPoints
+        this.pointsBook.innerHTML += currentUser.bookPoints
+        this.insertTotalPoints.innerHTML = currentUser.kitchenPoints + currentUser.sportPoints + currentUser.bookPoints
+        this.insertRecipeNumber.innerHTML = currentUser.kitchenPoints / 5
+        this.insertBookNumber.innerHTML = currentUser.sportPoints / 5
+        this.insertSportNumber.innerHTML = currentUser.bookPoints / 5
     }
 
 }
