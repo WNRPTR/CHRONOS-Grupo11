@@ -92,7 +92,7 @@ export default class ProfileView {
 
     bindProducts() {
         this.btnAddProduct.addEventListener('click', () => {
-            this.categoryController.addproduct(txtAddProductName.value, sltProductType.value, txtAddDescription.value, txtAddVideoLink.value, txtAddThemes.value, txtAddIngridients.value, txtAddDuration.value, txtAddStoreLinks.value,)
+            this.categoryController.addProduct(txtAddProductName.value, sltProductType.value, txtAddDescription.value, txtAddVideoLink.value, txtAddThemes.value, txtAddIngridients.value, txtAddDuration.value, txtAddStoreLinks.value,)
         })
     }
 }
