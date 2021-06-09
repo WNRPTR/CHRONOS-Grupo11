@@ -1,9 +1,7 @@
-import ProfileController from '../controllers/UserController.js'
 import UserController from '../controllers/UserController.js'
 
 export default class ProfileView {
     constructor() {
-        this.ProfileController = new ProfileController();
         this.userController = new UserController();
 
         // Password change DOM
@@ -31,7 +29,7 @@ export default class ProfileView {
     changePasswordForm() {
         this.btnNewPass.addEventListener('click', () => {
             try {
-                if (this.newPassword.value !== this.confirmNewPassord.value) {
+                if (this.newPassword.value !== 'pass2') {
                     throw Error('A palavra pass nova não corresponde a sua confirmação!');
                 }
                 this.userController.changePassword(this.newPassword.value);
@@ -39,10 +37,6 @@ export default class ProfileView {
 
             } catch (e) {
                 this.displayMessage(e, 'danger');
-                console.log(e)
-                console.log(this.newPassword.value)
-                console.log(this.confirmNewPassword.value)
-                console.log(this.newPassword.value !== this.confirmNewPassord.value)
             }
         });
     }

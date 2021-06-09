@@ -44,27 +44,11 @@ export default class UserController {
         return this.users.find(user => user.username == this.currentUser)
 
     }
-}
-
-
-
-
-
-export class ProfileController {
-    constructor() {
-        this.users = localStorage.users ? JSON.parse(localStorage.users) : []
-        this.currentUser = sessionStorage.getItem('loggedUser') ? sessionStorage.getItem('loggedUser') : null
-    }
 
     changePassword(newPassword) {
         const username = sessionStorage.getItem('loggedUser')
         this.users.find(user => user.username == username).password = newPassword
+        location.reload(1000)
+        console.log(this.users.find(user => user.username == username).password)
     }
-
-    getUserData() {
-        /* result = this.users.find(user => user.username == this.currentUser) */
-        let username = 'asdjadkajsdh'
-        return username
-    }
-
 }
