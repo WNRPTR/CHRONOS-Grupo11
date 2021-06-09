@@ -1,7 +1,7 @@
 export default class CategoryModel {
-    constructor(name, type, description, videoLink, themes, ingridients, duration, storeLink, likes, comments) {
+    constructor(name, Categorytype, description, videoLink, themes, ingridients, duration, storeLink, likes, comments) {
         this.name = name
-        this.type = type
+        this.Categorytype = Categorytype
         this.description = description
         this.videoLink = videoLink
         this.themes = themes
