@@ -51,7 +51,7 @@ export default class ProfileView {
     }
 
     completeForm(){
-        this.userController.getUserData();
+        this.userController.getUserData(this.pointsKitchenthis.pointsSport,this.pointsBook,this.insertName)
         this.pointsKitchen.innerHTML=kitchenPoints
         this.pointsSport.innerHTML=sportPoints
         this.pointsBook.innerHTML=bookPoints
