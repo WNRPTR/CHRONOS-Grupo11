@@ -8,5 +8,7 @@ export default class TrophyController {
 
     addTrophy(name, trophyType, text, points) {
         this.trophies.push(new TrophyModel(name, trophyType, text, points));
+        localStorage.setItem('trophies', JSON.stringify(this.trophies));
+        location.reload();
     }
 }
