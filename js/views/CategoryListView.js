@@ -12,7 +12,7 @@ export default class CategoryListView {
         this.categoryKitchen = document.querySelector('#categoryKitchen');
         this.categorySport = document.querySelector('#categorySport');
         this.categoryBook = document.querySelector('#categoryBook');
-        this.categoryListTarguet = document.getElementsByClassName('categoryListTarguet');
+        this.categoryListTarget = document.getElementsByClassName('categoryListTarget');
         this.fillCategoryList();
 
     }
