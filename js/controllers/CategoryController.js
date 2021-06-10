@@ -26,4 +26,10 @@ export default class CategoryController {
         this.currentCategory = name
         sessionStorage.setItem("category", name);
     }
+
+
+
+    getCurrentCategory() {
+        return category = sessionStorage.getItem('category')
+    }
 }
