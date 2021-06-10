@@ -9,6 +9,11 @@ export default class CategoryListView {
         //function to get activities ID's
         this.categoryListname = document.querySelector('#categoryListName');
         this.addCategoryProduct = document.querySelector('#addCategoryProduct');
+        this.btnRemoveProduct = document.getElementsByClassName('btnRemoveProduct');
+        if (this.btnRemoveProduct) {
+            this.removeProductTarget();
+        }
+
         this.categoryListTarget = document.getElementsByClassName('categoryListTarget');
         if (this.categoryListname) {
             this.fillCategoryList();
@@ -78,4 +83,15 @@ export default class CategoryListView {
             this.addCategoryProduct.innerHTML += result
         }
     }
+
+    removeProductTarget() {
+        for (const btnRemoveProduct of this.btnRemoveProduct) {
+            btnRemoveProduct.addEventListener('click', event => {
+                console.log(this.btnRemoveProduct)
+                this.btnRemoveProduct.deleteProduct(event.target.id);
+                location.reload(1000)
+            })
+        }
+    }
+
 }
