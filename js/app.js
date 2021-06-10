@@ -1,6 +1,7 @@
 import UserView from './views/UserView.js'
 import ProfileView from './views/ProfileView.js'
 import InitialPageView from './views/InitialPageView.js'
+import CategoryListView from './views/CategoryListView.js'
 
 class App {
     constructor() {
@@ -9,7 +10,8 @@ class App {
             'register': [UserView],
             'login': [UserView],
             'profile': [UserView, ProfileView],
-            'initialPage': [UserView, InitialPageView]
+            'initialPage': [UserView, InitialPageView],
+            'categoryList': [UserView,CategoryListView]
         };
 
         // import dummy data for testing purposes
