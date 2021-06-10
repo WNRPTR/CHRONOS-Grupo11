@@ -7,7 +7,7 @@ export default class CategoryListView {
         this.categoryController = new CategoryController();
 
         //function to get activities ID's
-        this.categoryListname = document.querySelector('#categoryListname');
+        this.categoryListname = document.querySelector('#categoryListName');
         this.addCategoryProduct = document.querySelector('#addCategoryProduct');
         this.categoryListTarget = document.getElementsByClassName('categoryListTarget');
         if (this.categoryListname) {
