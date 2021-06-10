@@ -6,7 +6,7 @@ export default class UserView {
 
         // register DOM
         this.registerUsername = document.getElementById('txtRegisterUsername');
-        this.insertMail = document.getElementById('insertMail')
+        this.registerEmail = document.getElementById('txtRegisterEmail')
         this.registerPassword = document.getElementById('txtRegisterPassword');
         this.registerPassword2 = document.getElementById('txtConfirmRegisterPassword');
         this.registerButton = document.getElementById('btnRegister');
@@ -31,7 +31,9 @@ export default class UserView {
         this.addProduct = document.getElementById('addProduct-tab');
         this.addTrophy = document.getElementById('addTrophy-tab');
         this.usersBan = document.getElementById('usersBan-tab');
-        this.checkUserType();
+        if (this.addProduct) {
+            this.checkUserType();
+        }
 
 
         this.messages = document.querySelector('#messages')
@@ -45,11 +47,12 @@ export default class UserView {
                 if (this.registerPassword.value !== this.registerPassword2.value) {
                     throw Error('Password and Confirm Password are not equal');
                 }
-                this.userController.register(this.registerUsername.value,this.insertMail.value, this.registerPassword.value, 'user');
+                this.userController.register(this.registerUsername.value, this.registerEmail.value, this.registerPassword.value, 'user');
                 this.displayMessage('User registered with success!', 'success');
                 location.href = '../html/login.html';
             } catch (e) {
-                this.displayMessage(e, 'danger');
+                this.displayMessage(e, 'danger')
+                console.log(e)
             }
         });
     }
