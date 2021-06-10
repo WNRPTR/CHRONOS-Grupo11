@@ -11,16 +11,22 @@ export default class CategoryListView {
         this.addCategoryProduct = document.querySelector('#addCategoryProduct');
         this.categoryListTarget = document.getElementsByClassName('categoryListTarget');
         this.fillCategoryList();
-
+        if (this.categoryListTarget) {
+            this.getTargetList();
+        }
     }
 
-    fillCategoryList(){
+    getTargetList(){
         for (const categoryListTarget of this.categoryListTarget) {
             categoryListTarget.addEventListener('click', event => {
                 this.CategoryController.setCurrentCategory(event,target.id);
                 location.href = '../html/categoryList.html';
             })
         }
+    }
+
+
+    fillCategoryList(){
         
         const typeCategory = this.categoryController.getCurrentCategory();
 
