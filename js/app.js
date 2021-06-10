@@ -1,6 +1,6 @@
 import UserView from './views/UserView.js'
 import ProfileView from './views/ProfileView.js'
-import InicialPageView from './views/InitialPageView.js'
+import InitialPageView from './views/InitialPageView.js'
 
 class App {
     constructor() {
