@@ -5,7 +5,7 @@ export default class InicialPageView {
     constructor() {
         this.userController = new UserController();
         this.categoryController = new CategoryController();
-        
+
         //function to get activities ID's
         this.addKitchenProduct = document.querySelector('#addKitchenProduct');
         this.addSportProduct = document.querySelector('#addSportProduct');
@@ -49,7 +49,7 @@ export default class InicialPageView {
                     </div>
                 </div>
             </div>`
-            
+
             this.addSportProduct.innerHTML += `<div class="col md-4">
                 <div class="card text-center">
                     <center>
@@ -80,5 +80,5 @@ export default class InicialPageView {
     }
 
 
-    
+
 }
