@@ -77,7 +77,7 @@ export default class InitialPageView {
                         <h5 class="card-title">${bookCards[index].name}</h5>
                         <button type="button" class="btn btn-primary " id = "${bookCards[index].name}">VER MAIS</button>`
             if (this.userController.isAdmin()) {
-                bookResult += `<button type="button" class="btn btn-danger" id = "${bookCards[index].name}"> X </button>`
+                bookResult += `<button type="button" class="btn btn-danger btnRemoveProduct" id = "${bookCards[index].name}"> X </button>`
             }
             bookResult += `</div>
                 </div>

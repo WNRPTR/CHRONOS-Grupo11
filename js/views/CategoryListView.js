@@ -68,7 +68,7 @@ export default class CategoryListView {
                         <h5 class="card-title">${productList[product].name}</h5>
                         <button type="button" class="btn btn-primary " id = "${productList[product].name}">VER MAIS</button>`
             if (this.userController.isAdmin()) {
-                result += `<button type="button" class="btn btn-danger" id = "${productList[product].name}"> X </button>`
+                result += `<button type="button" class="btn btn-danger btnRemoveProduct" id = "${productList[product].name}"> X </button>`
             }
 
             result += `</div>
