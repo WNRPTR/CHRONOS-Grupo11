@@ -10,24 +10,27 @@ export default class CategoryListView {
         this.categoryListname = document.querySelector('#categoryListname');
         this.addCategoryProduct = document.querySelector('#addCategoryProduct');
         this.categoryListTarget = document.getElementsByClassName('categoryListTarget');
-        this.fillCategoryList();
+        if (this.categoryListname) {
+            this.fillCategoryList();
+        }
         if (this.categoryListTarget) {
             this.getTargetList();
         }
     }
 
-    getTargetList(){
+    getTargetList() {
         for (const categoryListTarget of this.categoryListTarget) {
             categoryListTarget.addEventListener('click', event => {
-                this.CategoryController.setCurrentCategory(event,target.id);
+                console.log(this.categoryListTarget)
+                this.categoryController.setCurrentCategory(event.target.id);
                 location.href = '../html/categoryList.html';
             })
         }
     }
 
 
-    fillCategoryList(){
-        
+    fillCategoryList() {
+
         const typeCategory = this.categoryController.getCurrentCategory();
 
         const kitchen = "../img/food.jpg"
@@ -50,7 +53,7 @@ export default class CategoryListView {
         } else if (typeCategory == "sport") {
             this.categoryListname.innerHTML = `Desporto`
 
-        } else{
+        } else {
             this.categoryListname.innerHTML = `Livros`
         }
 

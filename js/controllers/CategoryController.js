@@ -30,6 +30,6 @@ export default class CategoryController {
 
 
     getCurrentCategory() {
-        return category = sessionStorage.getItem('category')
+        return sessionStorage.getItem("category")
     }
 }
