@@ -6,6 +6,14 @@ export default class CategoryListView {
         this.userController = new UserController();
         this.categoryController = new CategoryController();
 
+        //function to get activities ID's
+        this.categoryListname = document.querySelector('#categoryListname');
+        this.addCategoryProduct = document.querySelector('#addCategoryProduct');
+        this.fillCategoryList();
 
+    }
+
+    fillCategoryList(){
+        
     }
 }
