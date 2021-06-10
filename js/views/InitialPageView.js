@@ -1,7 +1,7 @@
 import UserController from '../controllers/UserController.js'
 import CategoryController from '../controllers/CategoryController.js'
 
-export default class InicialPageView {
+export default class InitialPageView {
     constructor() {
         this.userController = new UserController();
         this.categoryController = new CategoryController();
