@@ -9,9 +9,9 @@ class App {
             '': [UserView],
             'register': [UserView],
             'login': [UserView],
-            'profile': [UserView, ProfileView],
-            'initialPage': [UserView, InitialPageView],
-            'categoryList': [UserView,CategoryListView]
+            'profile': [UserView, ProfileView, CategoryListView],
+            'initialPage': [UserView, InitialPageView, CategoryListView],
+            'categoryList': [UserView, CategoryListView]
         };
 
         // import dummy data for testing purposes
