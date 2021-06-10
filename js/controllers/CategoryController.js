@@ -4,6 +4,7 @@ export default class CategoryController {
 
     constructor() {
         this.categorys = localStorage.categorys ? JSON.parse(localStorage.categorys) : []
+        this.currentCategory = sessionStorage.category ? sessionStorage.category : null
     }
 
 
@@ -18,5 +19,11 @@ export default class CategoryController {
     getCategoryData() {
         const categoryList = this.categorys
         return categoryList
+    }
+
+
+    setCurrentCategory(name) {
+        this.currentCategory = name
+        sessionStorage.setItem("category", name);
     }
 }
