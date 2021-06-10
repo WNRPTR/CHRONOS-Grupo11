@@ -15,7 +15,6 @@ export default class InitialPageView {
     }
 
     fillTopList() {
-
         const categoryList = this.categoryController.getCategoryData();
 
         const kitchenCards = []
