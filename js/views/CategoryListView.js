@@ -18,7 +18,12 @@ export default class CategoryListView {
     }
 
     fillCategoryList(){
-
+        for (const categoryListTarget of this.categoryListTarget) {
+            categoryListTarget.addEventListener('click', event => {
+                this.CategoryController.setCurrentCategory(event,target.id);
+                location.href = '../html/categoryList.html';
+            })
+        }
         
     }
 }
