@@ -33,12 +33,9 @@ export default class CategoryListView {
 
         const typeCategory = this.categoryController.getCurrentCategory();
 
-        const kitchen = "../img/food.jpg"
-        const sport = "../img/sport.jpg"
-        const book = "../img/book.jpg"
-
         const getCategoryList = this.categoryController.getCategoryData();
         const productList = []
+        let img = ""
 
         for (let category in getCategoryList) {
             if (getCategoryList[category].categoryType == typeCategory) {
@@ -49,19 +46,20 @@ export default class CategoryListView {
 
         if (typeCategory == "kitchen") {
             this.categoryListname.innerHTML = `Receitas`
-
+            img = "../img/food.jpg"
         } else if (typeCategory == "sport") {
             this.categoryListname.innerHTML = `Desporto`
-
+            img = "../img/sport.jpg"
         } else {
             this.categoryListname.innerHTML = `Livros`
+            img = "../img/book.jpg"
         }
 
         for (let product in productList) {
             let result = `<div class="col md-4">
                 <div class="card text-center">
                     <center>
-                        <img src="../img/food.jpg" class="card-img-top d-block img-fluid max-width: 100%" alt="..."
+                        <img src=${img} class="card-img-top d-block img-fluid max-width: 100%" alt="..."
                             style="height: 10rem">
                     </center>
                     <div class="card-body ">

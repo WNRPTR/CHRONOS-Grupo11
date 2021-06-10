@@ -32,4 +32,11 @@ export default class CategoryController {
     getCurrentCategory() {
         return sessionStorage.getItem("category")
     }
+
+
+    deleteProduc(name) {
+        this.categorys = this.categorys.filter(category => category.name != name)
+        localStorage.setItem('categorys', JSON.stringify(this.categorys));
+        location.reload(1000)
+    }
 }
