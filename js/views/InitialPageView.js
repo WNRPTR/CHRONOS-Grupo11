@@ -30,7 +30,6 @@ export default class InitialPageView {
 
             } else {
                 bookCards.push(categoryList[category])
-
             }
         }
 
