@@ -13,4 +13,10 @@ export default class CategoryController {
         localStorage.setItem('categorys', JSON.stringify(this.categorys));
         location.reload();
     }
+
+
+    getCategoryData() {
+        const categoryList = this.categorys
+        return categoryList
+    }
 }
