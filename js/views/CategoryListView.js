@@ -9,11 +9,16 @@ export default class CategoryListView {
         //function to get activities ID's
         this.categoryListname = document.querySelector('#categoryListname');
         this.addCategoryProduct = document.querySelector('#addCategoryProduct');
+        this.categoryKitchen = document.querySelector('#categoryKitchen');
+        this.categorySport = document.querySelector('#categorySport');
+        this.categoryBook = document.querySelector('#categoryBook');
+        this.categoryListTarguet = document.getElementsByClassName('categoryListTarguet');
         this.fillCategoryList();
 
     }
 
     fillCategoryList(){
+
         
     }
 }
