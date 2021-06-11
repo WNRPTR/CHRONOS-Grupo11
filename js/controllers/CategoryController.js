@@ -40,4 +40,16 @@ export default class CategoryController {
         localStorage.setItem('categorys', JSON.stringify(this.categorys));
         location.reload(1000)
     }
+
+
+    setCurrentProduct(name) {
+        this.currentCategory = name
+        sessionStorage.setItem("product", name);
+    }
+
+
+
+    getCurrentProduct() {
+        return sessionStorage.getItem("product")
+    }
 }
