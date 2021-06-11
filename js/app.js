@@ -2,6 +2,9 @@ import UserView from './views/UserView.js'
 import ProfileView from './views/ProfileView.js'
 import InitialPageView from './views/InitialPageView.js'
 import CategoryListView from './views/CategoryListView.js'
+import SportDetailView from './views/sportDetailView'
+import BookDetailView from './views/bookDetailView.js'
+import CookDetailView from './views/cookDetailView.js'
 
 class App {
     constructor() {
@@ -11,7 +14,10 @@ class App {
             'login': [UserView],
             'profile': [UserView, ProfileView, CategoryListView],
             'initialPage': [UserView, InitialPageView, CategoryListView],
-            'categoryList': [UserView, CategoryListView]
+            'categoryList': [UserView, CategoryListView],
+            'sportDetail': [SportDetailView],
+            'bookDetail': [BookDetailView],
+            'cookDetail': [CookDetailView]
         };
 
         // import dummy data for testing purposes
