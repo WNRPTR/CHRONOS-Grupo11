@@ -34,7 +34,8 @@ export default class CategoryController {
     }
 
 
-    deleteProduc(name) {
+    deleteProduct(name) {
+        console.log('asdasda')
         this.categorys = this.categorys.filter(category => category.name != name)
         localStorage.setItem('categorys', JSON.stringify(this.categorys));
         location.reload(1000)

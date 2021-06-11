@@ -24,10 +24,11 @@ export default class CategoryListView {
     }
 
     getTargetList() {
+        console.log(this.categoryListTarget.length)
         for (const categoryListTarget of this.categoryListTarget) {
+
             categoryListTarget.addEventListener('click', event => {
-                console.log(this.categoryListTarget)
-                this.categoryController.setCurrentCategory(event.target.id);
+                this.categoryController.setCurrentCategory(event.target.id)
                 location.href = '../html/categoryList.html';
             })
         }
@@ -71,7 +72,7 @@ export default class CategoryListView {
                         <h5 class="card-title">${productList[product].name}</h5>
                         <button type="button" class="btn btn-primary " id = "${productList[product].name}">VER MAIS</button>`
             if (this.userController.isAdmin()) {
-                result += `<button type="button" class="btn btn-danger btnRemoveProduct" id = "${productList[product].name}"> X </button>`
+                result += `<button type="button" class="btn btn-danger btnRemoveProduct" id="${productList[product].name}"> X </button>`
             }
 
             result += `</div>
@@ -83,10 +84,12 @@ export default class CategoryListView {
     }
 
     removeProductTarget() {
-        for (const btnRemoveProduct of this.btnRemoveProduct) {
-            btnRemoveProduct.addEventListener('click', event => {
-                console.log(this.btnRemoveProduct)
-                this.btnRemoveProduct.deleteProduct(event.target.id);
+        console.log(this.btnRemoveProduct)
+        for (const btnRemove of this.btnRemoveProduct) {
+            console.log('sadasdas')
+            btnRemove.addEventListener('click', event => {
+                console.log('this.btnRemoveProduct')
+                this.categoryController.deleteProduct(event.target.id);
                 location.reload(1000)
             })
         }
