@@ -42,9 +42,9 @@ export default class InitialPageView {
                     </center>
                     <div class="card-body ">
                         <h5 class="card-title">${kitchenCards[index].name}</h5>
-                        <button type="button" class="btn btn-primary " id = "${kitchenCards[index].name}">VER MAIS</button>`
+                        <button type="button" class="btn btn-primary btnProductDetail" id = "${kitchenCards[index].name}">VER MAIS</button>`
             if (this.userController.isAdmin()) {
-                kitchenResult += `<button type="button" class="btn btn-danger" id = "${kitchenCards[index].name}"> X </button>`
+                kitchenResult += `<button type="button" class="btn btn-danger btnRemoveProduct" id = "${kitchenCards[index].name}"> X </button>`
             }
             kitchenResult += `</div>
                 </div>
@@ -58,9 +58,9 @@ export default class InitialPageView {
                     </center>
                     <div class="card-body ">
                         <h5 class="card-title">${sportCards[index].name}</h5>
-                        <button type="button" class="btn btn-primary " id = "${sportCards[index].name}">VER MAIS</button>`
+                        <button type="button" class="btn btn-primary btnProductDetail" id = "${sportCards[index].name}">VER MAIS</button>`
             if (this.userController.isAdmin()) {
-                sportResult += `<button type="button" class="btn btn-danger" id = "${sportCards[index].name}"> X </button>`
+                sportResult += `<button type="button" class="btn btn-danger btnRemoveProduct" id = "${sportCards[index].name}"> X </button>`
             }
             sportResult += `</div>
                 </div>
@@ -75,7 +75,7 @@ export default class InitialPageView {
                     </center>
                     <div class="card-body ">
                         <h5 class="card-title">${bookCards[index].name}</h5>
-                        <button type="button" class="btn btn-primary " id = "${bookCards[index].name}">VER MAIS</button>`
+                        <button type="button" class="btn btn-primary btnProductDetail" id = "${bookCards[index].name}">VER MAIS</button>`
             if (this.userController.isAdmin()) {
                 bookResult += `<button type="button" class="btn btn-danger btnRemoveProduct" id = "${bookCards[index].name}"> X </button>`
             }
