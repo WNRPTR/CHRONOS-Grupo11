@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>receita</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
+        </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <!-- <link rel="stylesheet" href="../css/cook.css"> -->
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light " style="background-color: #9DDDFE;" width="100%">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="" id="logo" width="30%">
+                <span class="navbar-text " style="color: rgb(255, 255, 255); ">chronos</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
+                aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" style="justify-content: flex-end;" id="navbarID">
+                <div class="navbar-nav">
+                    <a class="nav-link active categoryListTarget" aria-current="page" id="kitchen">Receita</a>
+                    <a class="nav-link active categoryListTarget" aria-current=" page" id="sport">Desporto</a>
+                    <a class="nav-link active categoryListTarget" aria-current=" page" id="book">Livro</a>
+                    <a class="nav-link active" aria-current="page" href="map.html">Ajuda psicológica</a>
+                    <a class="nav-link active" aria-current="page" href="profile.html">Perfil</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid " style="position: relative; top: 45px;">
+
+
+        <h1 id="insertKitchenProductName">Receita</h1>
+        <br>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="ingredients-tab" data-toggle="tab" href="#ingredients" role="tab"
+                            aria-controls="ingredients" aria-selected="true">Ingredientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="preparation-tab" data-toggle="tab" href="#preparation" role="tab"
+                            aria-controls="preparation" aria-selected="false">Preparação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="comments-tab" data-toggle="tab" href="#comments" role="tab"
+                            aria-controls="comments" aria-selected="false">Comentários</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div id="ingredients" class="tab-pane fade show active " role="tabpanel"
+                        aria-labelledby=" ingredients-tab">
+                        <table class="table table w-1000">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Ingredientes</th>
+                                    <th scope="col">Quantidade</th>
+                                </tr>
+                            </thead>
+                            <tbody id="insertIngridients">
+                                <tr>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <td>Larry the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                    <div id="preparation" class="tab-pane fade " role="tabpanel" aria-labelledby=" preparation-tab">
+                        <p id="insertPreparation" style="font-size: 150%;"> "Lorem ipsum dolor sit amet, consectetur
+                            adipiscing
+                            elit, sed
+                            do
+                            eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                            veniam,
+                            quis
+                            nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Duis aute
+                            irure
+                            dolor
+                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur.
+                        </p>
+
+                    </div>
+
+
+                    <div id="comments" class="tab-pane fade" role="tabpanel" aria-labelledby=" comments-tab">
+                        <div class="row" id="insertComment">
+                            <p>oadnsaodnaosdnaodn</p>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="embed-responsive embed-responsive-16by9" id="videoInicial" style="justify-content: center;">
+        <!-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
+                            title="YouTube video" allowfullscreen></iframe> -->
+
+        <video width="100" height="240" controls id="insertKitchenProductLink">
+            <source src="Projeto Final de CPM (video promocional).mp4" type="video/mp4">
+        </video>
+    </div>
+
+
+
+
+
+</body>
+
+
+
+</html>
+
+<!-- RH: this is bootstrap 5 tabbed panel 
+        <div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab"
+                    aria-controls="home" aria-selected="true">Home</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab"
+                    aria-controls="profile" aria-selected="false">Profile</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab"
+                    aria-controls="contact" aria-selected="false">Contact</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+        </div>
+    </div>-->
+
+<!-- http://www.rgnutri.com.br/wp-content/uploads/2019/05/289745-ready-to-cook-e-sua-influencia-na-industria-alimenticia.jpg"
+    <!--  <div class="container" id="recepiesInfo">
+        <div class="contaier-fluid !direction !spacing">
+            <div class="row">
+                <div class="col">
+                    <h1>NOME DA RECEITA</h1>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container-fluid !direction !spacing">
+            <div class="row">
+                <div class="col">
+                    <h3>CATEGORIA</h3>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container-fluid !direction !spacing">
+            <div class="row">
+                <div class="col">
+                    <i class="mdi mdi-label-multiple-outline:">DURAÇÃO:</i>
+                </div>
+    
+                <div class="col">
+                    <i class="mdi mdi-label-multiple-outline:">DIFICULADADE:</i>
+                </div>
+                <div class="col">
+                    <i class="mdi mdi-label-multiple-outline:">PORCOES:</i>
+                </div>
+    
+            </div>
+    
+        </div>
+    
+    </div> -->
