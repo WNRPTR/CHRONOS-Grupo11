@@ -2,9 +2,9 @@ import UserView from './views/UserView.js'
 import ProfileView from './views/ProfileView.js'
 import InitialPageView from './views/InitialPageView.js'
 import CategoryListView from './views/CategoryListView.js'
-import SportDetailView from './views/sportDetailView'
-import BookDetailView from './views/bookDetailView.js'
-import CookDetailView from './views/cookDetailView.js'
+import SportDetailView from './views/SportDetailView'
+import BookDetailView from './views/BookDetailView.js'
+import CookDetailView from './views/CookDetailView.js'
 
 class App {
     constructor() {
