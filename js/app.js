@@ -2,7 +2,7 @@ import UserView from './views/UserView.js'
 import ProfileView from './views/ProfileView.js'
 import InitialPageView from './views/InitialPageView.js'
 import CategoryListView from './views/CategoryListView.js'
-import SportDetailView from './views/SportDetailView'
+import SportDetailView from './views/SportDetailView.js'
 import BookDetailView from './views/BookDetailView.js'
 import CookDetailView from './views/CookDetailView.js'
 
