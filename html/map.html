@@ -46,121 +46,129 @@
 
 
 
-
-
+    <div>
+        <select class="col md-1" id="sltTransports" style="background-color: #d4ecf8; height:50px;">
+            <option value="">-- SELECIONAR TRANSPORTE --</option>
+            <option value="DRIVING">Carro</option>
+            <option value="WALKING">A pé</option>
+            <option value="BICYCLING">Bicicleta</option>
+            <option value="TRANSIT">Transit</option>
+        </select>
+        <p id="divResults" class="col md-6"></p>
+    </div>
     <div id="map"></div>
 
 
 
 
     <script async
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5uLBWQM4CRaEaAel5qberiBvpGKO5qyw&callback=initMap&libraries=places">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5uLBWQM4CRaEaAel5qberiBvpGKO5qyw&callback=initMap">
         </script>
 
     <script>
+
         function initMap() {
+            structuresPositions = [
+                {
+                    text: 'primeiro',
+                    location: { lat: 41.371250, lng: -8.728500 },
+                },
+                {
+                    text: 'segundo',
+                    location: { lat: 41.361500, lng: -8.744500 },
+                },
+                {
+                    text: 'terceiro',
+                    location: { lat: 41.368250, lng: -8.747000 },
+                },
+                {
+                    text: 'quarto',
+                    location: { lat: 41.374099, lng: -8.735550 },
+                },
+            ]
+
+            const sltTransport = document.getElementById('sltTransports')
+            let esmad = { lat: 41.366949, lng: -8.738722 }
+            infoWindow = new google.maps.InfoWindow();
+            const directionsService = new google.maps.DirectionsService();
+            const directionsRenderer = new google.maps.DirectionsRenderer();
+
             const map = new google.maps.Map(document.getElementById("map"), {
-                center: { lat: -34.397, lng: 150.644 },
-                zoom: 18
+                center: esmad,
+                zoom: 16
             });
 
+            directionsRenderer.setMap(map)
 
-            infoWindow = new google.maps.InfoWindow();
+            const esmadMarker = new google.maps.Marker({
+                position: { lat: 41.366949, lng: -8.738722 },
+                map: map,
+                animation: google.maps.Animation.DROP
+            })
+
+            for (const structures of structuresPositions) {
+                createMark(structures)
+            }
+
+            function createMark(result) {
+                const marker = new google.maps.Marker({
+                    map: map,
+                    position: result.location,
+                    animation: '',
+                })
 
 
-            //try HTML5 geolocation
-            if (navigator.geolocation) {
-                navigator.geolocation.watchPosition(
-                    position => {
-                        const pos = {
-                            lat: position.coords.latitude,
-                            lng: position.coords.longitude
-                        };
-                        infoWindow.setPosition(pos);
-                        infoWindow.setContent("Location found");
-                        infoWindow.open(map);
-                        map.setCenter(pos);
 
-                        const contentString = `ok
-                            <div id="content">
-                                <h1>ESMAD</h1>
-                                <p> A <b>ESMAD</b> é uma das escolas do P.PORTO!</p>
-                                <p><img src="https://www.esmad.ipp.pt/logo-ipp.png"/></p>
-                            </div>
+                google.maps.event.addListener(marker, 'click', function () {
+                    infoWindow.setContent(result.text);
+                    infoWindow.open(map, this)
+                    toggleBounce(marker);
+                    if (sltTransport !== null) {
+                        calcRoute(directionsService, directionsRenderer, marker.position)
+                    }
+                })
+            }
+
+            function toggleBounce(marker) {
+                if (marker.getAnimation() !== null) {
+                    marker.setAnimation(null);
+                } else {
+                    marker.setAnimation(google.maps.Animation.BOUNCE);
+                }
+            }
+
+
+            function calcRoute(directionsService, directionsRenderer, marker) {
+
+                const selectedMode = document.querySelector('#sltTransports').value;
+
+                // Creation of a DirectionsRequest object 
+                const request = {
+                    origin: esmad,
+                    destination: marker,
+                    travelMode: google.maps.TravelMode[selectedMode]
+                };
+
+
+
+                directionsService.route(request, (result, status) => {
+                    if (status == 'OK') {
+                        directionsRenderer.setDirections(result);
+                        const directionsData = result.routes[0].legs[0]; // Get data about the mapped route
+                        if (directionsData) {
+                            document.querySelector("#divResults").innerHTML = `<hr>
+                            <div>Distância de viagem: ${directionsData.distance.text} (${directionsData.duration.text})</div><hr>
                         `
-
-                        const infowindow2 = new google.maps.InfoWindow({ content: contentString })
-
-                        const marker = new google.maps.Marker({
-                            position: pos,
-                            map: map
-                        })
-
-                        marker.addListener("click",
-                            () => infowindow2.open(map, marker)
-                        )
-
-
-
-
-
-                        const request = {
-                            location: pos,
-                            radius: '100',
-                            type: ['restaurant']
-                        };
-
-
-                        service = new google.maps.places.PlacesService(map);
-                        service.nearbySearch(request, callback);
-
-                        function callback(result, status) {
-                            if (status == google.maps.places.PlacesServiceStatus.OK) {
-                                for (const result of results) {
-                                    createMarker(result);
-                                }
-                                map.setCenter(results[0].geometry.location);
-                            }
                         }
-
-
-                        function createMarker(place) {
-                            const marker2 = new google.maps.Marker({
-                                map: map,
-                                position: place.geometry.location
-                            });
-
-                            google.maps.event.addListener(marker2, 'click', function () {
-                                infowindow.sentContent(place, name);
-                                infowindow.open(map, this);
-                            })
+                        else {
+                            document.querySelector("#divResults").innerHTML = 'Directions request failed'
                         }
-                    },
-                    () => handleLocationError(true, infoWindow, map.getCenter())
-                );
-
-
-
-
-
-            } else {
-                // Browser doesn't support geolocation
-                handleLocationError(false, infoWindow, map.getCenter());
+                    } else {
+                        alert('Não é possível encontrar uma rota para esse transporte.\nPor favor escolha outro transporte.')
+                    }
+                });
             }
         }
-
-
-        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-            infoWindow.setPosition(pos);
-            infoWindow.setContent(browserHasGeolocation ? "Error: The Geolocation service failed" : "Error: your browser doesn't support geolocation."
-            );
-
-            infoWindow.open(map);
-        }
-
-
-
-
 
     </script>
 
