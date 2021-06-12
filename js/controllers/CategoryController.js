@@ -18,6 +18,7 @@ export default class CategoryController {
 
     getCategoryData() {
         const categoryList = this.categorys
+        console.log(categoryList)
         return categoryList
     }
 

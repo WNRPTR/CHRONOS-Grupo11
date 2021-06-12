@@ -21,7 +21,7 @@ export default class CategoryListView {
 
         this.categoryListTarget = document.getElementsByClassName('categoryListTarget');
         if (this.categoryListname) {
-            this.fillCategoryList();
+            this.fillCategoryList(this.categoryController.getCategoryData());
         }
         if (this.categoryListTarget) {
             this.getTargetList();
@@ -29,7 +29,7 @@ export default class CategoryListView {
     }
 
     getTargetList() {
-        console.log(this.categoryListTarget.length)
+        console.log(this.categoryListTarget)
         for (const categoryListTarget of this.categoryListTarget) {
 
             categoryListTarget.addEventListener('click', event => {
@@ -40,11 +40,10 @@ export default class CategoryListView {
     }
 
 
-    fillCategoryList() {
+    fillCategoryList(getCategoryList) {
 
         const typeCategory = this.categoryController.getCurrentCategory();
 
-        const getCategoryList = this.categoryController.getCategoryData();
         const productList = []
         let img = ""
 
@@ -54,6 +53,7 @@ export default class CategoryListView {
 
             }
         }
+        console.log(productList)
 
         if (typeCategory == "kitchen") {
             this.categoryListname.innerHTML = `Receitas`
@@ -66,7 +66,8 @@ export default class CategoryListView {
             img = "../img/book.jpg"
         }
 
-        for (let product in productList) {
+        for (let product of productList) {
+            console.log(product)
             let result = `<div class="col md-4">
                 <div class="card text-center">
                     <center>
@@ -74,10 +75,10 @@ export default class CategoryListView {
                             style="height: 10rem">
                     </center>
                     <div class="card-body ">
-                        <h5 class="card-title">${productList[product].name}</h5>
-                        <button type="button" class="btn btn-primary btnProductDetail" id = "${productList[product].name}">VER MAIS</button>`
+                        <h5 class="card-title">${product.name}</h5>
+                        <button type="button" class="btn btn-primary btnProductDetail" id =  ${product.name}>VER MAIS</button>`
             if (this.userController.isAdmin()) {
-                result += `<button type="button" class="btn btn-danger btnRemoveProduct" id="${productList[product].name}"> X </button>`
+                result += `<button type="button" class="btn btn-danger btnRemoveProduct" id= ${product.name}> X </button>`
             }
 
             result += `</div>
@@ -94,31 +95,32 @@ export default class CategoryListView {
             console.log('sadasdas')
             btnRemove.addEventListener('click', event => {
                 console.log('this.btnRemoveProduct')
-                this.categoryController.deleteProduct(event.target.id);
+                this.categoryController.deleteProduct(event.targer.id);
                 location.reload(1000)
             })
         }
     }
 
     showProductDetail() {
+        console.log(this.btnProductDetail)
         for (const btnShowDetail of this.btnProductDetail) {
             btnShowDetail.addEventListener('click', event => {
                 this.categoryController.setCurrentProduct(event.target.id)
                 const currentProduct = this.categoryController.getCurrentProductType()
 
                 if (currentProduct == "sport") {
-                    location.href='../html/sportDetail.html'
+                    location.href = '../html/sportDetail.html'
 
-                } else if (currentProduct == "book"){
-                    location.href='../html/bookDetail.html'
+                } else if (currentProduct == "book") {
+                    location.href = '../html/bookDetail.html'
 
-                }else {
-                    location.href='../html/cookDetail.html'
-                    
+                } else {
+                    location.href = '../html/cookDetail.html'
+
                 }
 
             })
-        }   
+        }
     }
 
 }

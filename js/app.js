@@ -91,9 +91,21 @@ class App {
 
         const categorys = [
             {
-                name: 'Tosta mista',
+                name: 'Tosta',
                 categoryType: 'kitchen',
                 description: 'por o queijo e o fiambre no pao po-lo a aquecer e ja esta pronto para comer',
+                videoLink: 'https://www.youtube.com/watch?v=dAPUPgC3h-w',
+                themes: '',
+                ingridients: 'pao;1/queijo;1 fatia/fiambre;1 fatia',
+                duration: '5 minutos',
+                storeLink: '',
+                likes: 0,
+                comments: []
+            },
+            {
+                name: 'Torrada',
+                categoryType: 'kitchen',
+                description: 'e a vida meu puto',
                 videoLink: 'https://www.youtube.com/watch?v=dAPUPgC3h-w',
                 themes: '',
                 ingridients: 'pao;1/queijo;1 fatia/fiambre;1 fatia',
