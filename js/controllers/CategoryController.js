@@ -52,4 +52,11 @@ export default class CategoryController {
     getCurrentProduct() {
         return sessionStorage.getItem("product")
     }
+
+
+
+    getCurrentProductType() {
+        categoryName = sessionStorage.getItem("product")
+        return this.categorys.find(category => category.name = categoryName).categoryType
+    }
 }
