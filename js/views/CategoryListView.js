@@ -14,6 +14,11 @@ export default class CategoryListView {
             this.removeProductTarget();
         }
 
+        this.btnProductDetail = document.getElementsByClassName('btnProductDetail');
+        if (this.btnProductDetail) {
+            this.showProductDetail();
+        }
+
         this.categoryListTarget = document.getElementsByClassName('categoryListTarget');
         if (this.categoryListname) {
             this.fillCategoryList();
@@ -93,6 +98,27 @@ export default class CategoryListView {
                 location.reload(1000)
             })
         }
+    }
+
+    showProductDetail() {
+        for (const btnShowDetail of this.btnProductDetail) {
+            btnShowDetail.addEventListener('click', event => {
+                this.categoryController.setCurrentProduct(event.target.id)
+                const currentProduct = this.categoryController.getCurrentProductType()
+
+                if (currentProduct == "sport") {
+                    location.href='../html/sportDetail.html'
+
+                } else if (currentProduct == "book"){
+                    location.href='../html/bookDetail.html'
+
+                }else {
+                    location.href='../html/cookDetail.html'
+                    
+                }
+
+            })
+        }   
     }
 
 }

@@ -4,5 +4,6 @@ export default class SportDetailView {
     constructor() {
         this.categoryController = new CategoryController();
 
+        
     }
 }
