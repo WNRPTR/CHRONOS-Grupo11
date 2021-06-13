@@ -39,6 +39,10 @@ export default class SportDetailView {
         this.applyComment.addEventListener('click', () => {
             this.categoryController.addComment(this.newComment.value);
         })
+<<<<<<< HEAD
+
+=======
+>>>>>>> c301054fc2db0b71607fba5ca5da6f906d49cbcb
     }
 
 
