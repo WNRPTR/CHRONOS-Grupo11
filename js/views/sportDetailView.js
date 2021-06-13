@@ -24,7 +24,7 @@ export default class SportDetailView {
         this.insertSportProductLink.innerHTML = `<source src="${productInfo.videoLink}" type="video/mp4">`
         this.insertDescription.innerHTML = `${productInfo.description}`
         for (let index in productInfo.comments){
-            this.insertComment.innerHTML = `<p>${productInfo.comments[index]}</p><hr>`
+            this.insertComment.innerHTML += `<p>${productInfo.comments[index]}</p><hr>`
         }
         
 
