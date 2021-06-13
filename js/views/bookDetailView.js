@@ -8,7 +8,7 @@ export default class BookDetailView {
 
         //Infos to create Book detail page
         this.insertProductTitle = document.querySelector('#insertProductTitle')
-        this.inserProductImage = document.querySelector('#inserProductImage')
+        this.insertProductImage = document.querySelector('#insertProductImage')
         this.insertProductStoryDescription = document.querySelector('#insertProductStoryDescription')
         this.insertProductStoreLink = document.querySelector('#insertProductStoreLink')
         this.insertProductStoryThemes = document.querySelector('#insertProductStoryThemes')
@@ -32,7 +32,7 @@ export default class BookDetailView {
         const stores = productInfo.storeLink.split('|')
 
         this.insertProductTitle.innerHTML = `${productInfo.name}`
-        this.inserProductImage.innerHTML = `<img src="${productInfo.videoLink}" class="figure-img"
+        this.insertProductImage.innerHTML = `<img src=${productInfo.videoLink} class="figure-img"
             alt="" style="height:100%; width: 200%">`
         this.insertProductStoryDescription.innerHTML = `${productInfo.description}`
         this.insertProductStoryThemes.innerHTML = `${productInfo.themes}`
