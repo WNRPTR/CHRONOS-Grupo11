@@ -4,6 +4,7 @@ export default class UserView {
     constructor() {
         this.userController = new UserController();
 
+
         // register DOM
         this.registerUsername = document.getElementById('txtRegisterUsername');
         this.registerEmail = document.getElementById('txtRegisterEmail')
@@ -23,9 +24,15 @@ export default class UserView {
             this.bindLoginForm();
         }
 
+        /* this.fullSite = document.querySelector('#fullSite')
+        this.body = document.getElementsByTagName('body')
+        if (this.fullSite) {
+            this.checkLoginStatus()
+        } */
+
         this.logoutButton = document.getElementById('btnLogout');
         if (this.logoutButton) {
-            this.logOutFUnction();
+            this.logOutFunction();
         }
 
         this.addProduct = document.getElementById('addProduct-tab');
@@ -36,8 +43,9 @@ export default class UserView {
         }
 
 
+
         this.messages = document.querySelector('#messages')
-        this.checkLoginStatus();
+
     }
 
     bindRegisterForm() {
@@ -78,7 +86,7 @@ export default class UserView {
 
     }
 
-    logOutFUnction() {
+    logOutFunction() {
         this.logoutButton.addEventListener('click', () => {
             this.userController.logout();
             /* this.updateSite('logout'); */
@@ -87,13 +95,13 @@ export default class UserView {
         })
     }
 
-    checkLoginStatus() {
+    /* checkLoginStatus() {
         if (this.userController.isLogged()) {
-            /* this.updateSite('login'); */
+            this.updateSite('login');
         } else {
-            /* this.updateSite('logout'); */
+            this.updateSite('logout');
         }
-    }
+    } */
 
     checkUserType() {
         if (this.userController.isAdmin()) {
@@ -111,12 +119,14 @@ export default class UserView {
     /* updateSite(event) {
         switch (event) {
             case 'login':
-                this.loginButton.style.visibility = 'hidden'
-                this.logoutButton.style.visibility = 'visible'
+                this.fullSite.style.visibility = 'visible'
                 break;
             case 'logout':
-                this.loginButton.style.visibility = 'visible'
-                this.logoutButton.style.visibility = 'hidden'
+                this.fullSite.style.visibility = 'hidden'
+                this.body.innerHTML = `<div>
+                <h5>Precisa de estar logado para poder usufruir do site</h5>
+            </div>`
+
         }
     } */
 
