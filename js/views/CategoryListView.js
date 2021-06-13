@@ -29,7 +29,6 @@ export default class CategoryListView {
     }
 
     getTargetList() {
-        console.log(this.categoryListTarget)
         for (const categoryListTarget of this.categoryListTarget) {
 
             categoryListTarget.addEventListener('click', event => {
@@ -90,7 +89,6 @@ export default class CategoryListView {
     }
 
     removeProductTarget() {
-        console.log(this.btnRemoveProduct)
         for (const btnRemove of this.btnRemoveProduct) {
             console.log('sadasdas')
             btnRemove.addEventListener('click', event => {
@@ -102,8 +100,6 @@ export default class CategoryListView {
     }
 
     showProductDetail() {
-        console.log(this.btnProductDetail)
-
         for (const btnShowDetail of this.btnProductDetail) {
             btnShowDetail.addEventListener('click', event => {
                 this.categoryController.setCurrentProduct(event.target.id)
