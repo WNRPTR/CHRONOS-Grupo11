@@ -106,13 +106,13 @@ export default class CategoryListView {
                 const currentProduct = event.target.dataset.type
 
                 if (currentProduct == "sport") {
-                    location.href = '../html/SportDetail.html'
+                    location.href = '../html/sportDetail.html'
 
                 } else if (currentProduct == "book") {
-                    location.href = '../html/BookDetail.html'
+                    location.href = '../html/bookDetail.html'
 
                 } else {
-                    location.href = '../html/CookDetail.html'
+                    location.href = '../html/cookDetail.html'
 
                 }
 
