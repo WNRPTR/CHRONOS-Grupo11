@@ -45,7 +45,8 @@
                     <img src="https://images-na.ssl-images-amazon.com/images/I/81wY7h8-GsL.jpg"
                         class="figure-img img-fluid rounded" alt="" style="height:500%; width: 100%">
                 </figure> -->
-                <div class="embed-responsive embed-responsive-22by9" id="videoInicial" style="justify-content: center;">
+                <div class="embed-responsive embed-responsive-22by9" id="insertProductImage"
+                    style="justify-content: center;">
                     <!-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
                                         title="YouTube video" allowfullscreen></iframe> -->
 
@@ -54,14 +55,16 @@
                 </div>
             </div>
             <div class="col-md-10 text-center">
-                <h1>[titulo do livro]</h1>
-                <div>
-                    <i class="bi bi-heart" aria-hidden="true" style="font-size: 200%;"></i>
-                </div>
+                <h1 id="insertProductTitle">[titulo do livro]</h1>
                 <br>
-                <h3>[sinopse do livro]</h3>
+                <h3 id="insertProductStoryDescription">[sinopse do livro]</h3>
                 <br>
-                <h5>Lojas:<br>[Nome da loja]</h5>
+                <h5 id="insertProductStoreLink">Lojas:<br>[Nome da loja]</h5>
+            </div>
+            <input class="w-25" type="text" id="newComment">
+            <button class="btn btn-primary" id="applyComment">Adicionar</button>
+            <hr>
+            <div id="insertComment">
             </div>
         </div>
     </div>
