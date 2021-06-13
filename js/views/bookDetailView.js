@@ -33,13 +33,13 @@ export default class BookDetailView {
 
         this.insertProductTitle.innerHTML = `${productInfo.name}`
         this.insertProductImage.innerHTML = `<img src=${productInfo.videoLink} class="figure-img"
-            alt="" style="height:100%; width: 200%">`
+            alt="" style="max-height:600px; max-width:500px">`
         this.insertProductStoryDescription.innerHTML = `${productInfo.description}`
         this.insertProductStoryThemes.innerHTML = `${productInfo.themes}`
 
         for (let index in stores) {
             let item = stores[index].split(';');
-            this.insertProductStoreLink.innerHTML += `<h6 href=${item[1]}>${item[0]}</h6>`
+            this.insertProductStoreLink.innerHTML += `<a href="${item[1]}"><h6>${item[0]}</h6></a>`
         }
 
 
