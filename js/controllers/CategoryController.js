@@ -54,6 +54,10 @@ export default class CategoryController {
     }
 
 
+    getProductInfo(name) {
+        return this.categorys.find(category => category.name == name)
+    }
+
 
     /* getCurrentProductType() {
         const categoryName = sessionStorage.getItem("product")

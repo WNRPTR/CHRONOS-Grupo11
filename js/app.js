@@ -124,7 +124,7 @@ class App {
                 duration: '',
                 storeLink: '',
                 likes: 0,
-                comments: []
+                comments: ['Esta merda é linda', 'Caralho até já sinto as pernas']
             },
             {
                 name: 'Minecraft: Principiantes',
