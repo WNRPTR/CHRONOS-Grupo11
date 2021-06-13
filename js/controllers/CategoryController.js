@@ -59,6 +59,14 @@ export default class CategoryController {
     }
 
 
+    addComment(comment) {
+        const productName = sessionStorage.getItem("product")
+        this.categorys.find(category => category.name == productName).comments.push(comment)
+        localStorage.setItem('categorys', JSON.stringify(this.categorys));
+        location.reload(1000)
+    }
+
+
     /* getCurrentProductType() {
         const categoryName = sessionStorage.getItem("product")
         return this.categorys.find(category => category.name = categoryName).categoryType
