@@ -17,9 +17,8 @@ export default class SportDetailView {
         this.newComment = document.querySelector('#newComment')
         this.applyComment = document.querySelector('#applyComment')
         if (this.applyComment) {
-            createComment();
+            this.createComment();
         }
-
     }
 
     fillInfo() {
@@ -36,13 +35,16 @@ export default class SportDetailView {
         }
     }
 
-    createComment(){
+    createComment() {
         this.applyComment.addEventListener('click', () => {
-            this.categoryController.addComment(this.newComment);
+            this.categoryController.addComment(this.newComment.value);
         })
+<<<<<<< HEAD
 
+=======
+>>>>>>> c301054fc2db0b71607fba5ca5da6f906d49cbcb
     }
 
 
-    
+
 }
