@@ -13,6 +13,13 @@ export default class SportDetailView {
         this.insertComment = document.querySelector('#insertComment')
         this.fillInfo();
 
+        //info to add a comment
+        this.newComment = document.querySelector('#newComment')
+        this.applyComment = document.querySelector('#applyComment')
+        if (this.applyComment) {
+            createComment();
+        }
+
     }
 
     fillInfo() {
@@ -27,9 +34,16 @@ export default class SportDetailView {
         for (let index in productInfo.comments) {
             this.insertComment.innerHTML += `<p>${productInfo.comments[index]}</p><hr>`
         }
+    }
+
+    createComment(){
+        this.applyComment.addEventListener('click', () => {
+            this.categoryController.addComment(this.newComment);
+        })
 
 
     }
 
 
+    
 }
