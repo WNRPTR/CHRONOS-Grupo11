@@ -9,6 +9,11 @@ export default class CategoryListView {
         //function to get activities ID's
         this.categoryListname = document.querySelector('#categoryListName');
         this.addCategoryProduct = document.querySelector('#addCategoryProduct');
+
+        this.categoryListTarget = document.getElementsByClassName('categoryListTarget');
+        if (this.categoryListname) {
+            this.fillCategoryList(this.categoryController.getCategoryData());
+        }
         this.btnRemoveProduct = document.getElementsByClassName('btnRemoveProduct');
         if (this.btnRemoveProduct) {
             this.removeProductTarget();
@@ -17,11 +22,6 @@ export default class CategoryListView {
         this.btnProductDetail = document.getElementsByClassName('btnProductDetail');
         if (this.btnProductDetail) {
             this.showProductDetail();
-        }
-
-        this.categoryListTarget = document.getElementsByClassName('categoryListTarget');
-        if (this.categoryListname) {
-            this.fillCategoryList(this.categoryController.getCategoryData());
         }
         if (this.categoryListTarget) {
             this.getTargetList();
@@ -53,7 +53,7 @@ export default class CategoryListView {
 
             }
         }
-        console.log(productList)
+
 
         if (typeCategory == "kitchen") {
             this.categoryListname.innerHTML = `Receitas`
@@ -67,7 +67,7 @@ export default class CategoryListView {
         }
 
         for (let product of productList) {
-            console.log(product)
+
             let result = `<div class="col md-4">
                 <div class="card text-center">
                     <center>
@@ -95,7 +95,7 @@ export default class CategoryListView {
             console.log('sadasdas')
             btnRemove.addEventListener('click', event => {
                 console.log('this.btnRemoveProduct')
-                this.categoryController.deleteProduct(event.targer.id);
+                this.categoryController.deleteProduct(event.target.id);
                 location.reload(1000)
             })
         }
@@ -103,10 +103,11 @@ export default class CategoryListView {
 
     showProductDetail() {
         console.log(this.btnProductDetail)
+
         for (const btnShowDetail of this.btnProductDetail) {
             btnShowDetail.addEventListener('click', event => {
                 this.categoryController.setCurrentProduct(event.target.id)
-                const currentProduct = this.categoryController.getCurrentProductType()
+                const currentProduct = event.target.dataset.type
 
                 if (currentProduct == "sport") {
                     location.href = '../html/sportDetail.html'

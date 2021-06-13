@@ -18,7 +18,6 @@ export default class CategoryController {
 
     getCategoryData() {
         const categoryList = this.categorys
-        console.log(categoryList)
         return categoryList
     }
 
@@ -56,8 +55,8 @@ export default class CategoryController {
 
 
 
-    getCurrentProductType() {
-        categoryName = sessionStorage.getItem("product")
+    /* getCurrentProductType() {
+        const categoryName = sessionStorage.getItem("product")
         return this.categorys.find(category => category.name = categoryName).categoryType
-    }
+    } */
 }
