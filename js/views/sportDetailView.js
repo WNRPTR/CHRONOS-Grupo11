@@ -41,7 +41,6 @@ export default class SportDetailView {
             this.categoryController.addComment(this.newComment);
         })
 
-
     }
 
 
