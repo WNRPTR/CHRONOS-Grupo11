@@ -21,12 +21,13 @@ export default class SportDetailView {
         const productInfo = this.categoryController.getProductInfo(currentProduct)
 
         this.insertSportProductName.innerHTML = `${productInfo.name}`
-        this.insertSportProductLink.innerHTML = `<source src="${productInfo.videoLink}" type="video/mp4">`
+        this.insertSportProductLink.innerHTML = `<iframe class="embed-responsive-item" src=${productInfo.videoLink}
+        title="YouTube video" allowfullscreen></iframe>`
         this.insertDescription.innerHTML = `${productInfo.description}`
-        for (let index in productInfo.comments){
+        for (let index in productInfo.comments) {
             this.insertComment.innerHTML += `<p>${productInfo.comments[index]}</p><hr>`
         }
-        
+
 
     }
 

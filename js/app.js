@@ -118,7 +118,7 @@ class App {
                 name: 'Pernas',
                 categoryType: 'sport',
                 description: 'Se você gosta de treinar perna com intensidade, você vai adorar esse treino de perna. Separei 4 exercícios ou seja um treino completo de pernas para você fazer na sua casa.',
-                videoLink: 'https://www.youtube.com/watch?v=txJ1HR9H398',
+                videoLink: 'https://www.youtube.com/embed/txJ1HR9H398',
                 themes: '',
                 ingridients: '',
                 duration: '',
