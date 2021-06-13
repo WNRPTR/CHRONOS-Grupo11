@@ -29,7 +29,7 @@ export default class BookDetailView {
         const currentProduct = this.categoryController.getCurrentProduct()
         const productInfo = this.categoryController.getProductInfo(currentProduct)
 
-        const ingridients = productInfo.ingridients.split('|')
+        const stores = productInfo.storeLink.split('|')
 
         this.insertProductTitle.innerHTML = `${productInfo.name}`
         this.inserProductImage.innerHTML = `<img src="${productInfo.videoLink}" class="figure-img"
@@ -37,9 +37,9 @@ export default class BookDetailView {
         this.insertProductStoryDescription.innerHTML = `${productInfo.description}`
         this.insertProductStoryThemes.innerHTML = `${productInfo.themes}`
 
-        for (let index in ingridients) {
-            let item = ingridients[index].split(';');
-            this.insertIngridients.innerHTML += `<tr>
+        for (let index in stores) {
+            let item = stores[index].split(';');
+            this.insertProductStoreLink.innerHTML += `<tr>
                 <td>${item[0]}</td>
                 <td>${item[1]}</td>
             </tr>`
