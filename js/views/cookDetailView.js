@@ -28,9 +28,11 @@ export default class CookDetailView {
         const currentProduct = this.categoryController.getCurrentProduct()
         const productInfo = this.categoryController.getProductInfo(currentProduct)
 
+        const ingridients = productInfo.ingridients.split('/')
+
         this.insertKitchenProductName.innerHTML = `${productInfo.name}`
-        for (let index in productInfo.ingridients) {
-            let item = productInfo.ingridients[index].split(';');
+        for (let index in ingridients) {
+            let item = ingridients[index].split(';');
             this.insertIngridients.innerHTML += `<tr>
                 <td>${item[0]}</td>
                 <td>${item[1]}</td>
