@@ -15,9 +15,9 @@ class App {
             'profile': [UserView, ProfileView, CategoryListView],
             'initialPage': [UserView, InitialPageView, CategoryListView],
             'categoryList': [UserView, CategoryListView],
-            'sportDetail': [SportDetailView],
-            'bookDetail': [BookDetailView],
-            'cookDetail': [CookDetailView]
+            'sportDetail': [SportDetailView, CategoryListView, UserView],
+            'bookDetail': [BookDetailView, CategoryListView, UserView],
+            'cookDetail': [CookDetailView, CategoryListView, UserView]
         };
 
         // import dummy data for testing purposes
