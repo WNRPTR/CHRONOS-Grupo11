@@ -23,40 +23,42 @@
 </head>
 
 <body>
-    <!-- NavBar -->
-    <nav class="navbar navbar-expand-md navbar-light" style="background-color: #9DDDFE;">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="initialPage.html"><img src="../img/logo 1-2.png" id="logo" width="30%"><img
-                    src="../img/logo 2-2.png" id="logo" width="50"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
-                aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarID" style="justify-content: flex-end;">
-                <div class="navbar-nav">
-                    <a class="nav-link active categoryListTarget" aria-current="page" id="kitchen">Receita</a>
-                    <a class="nav-link active categoryListTarget"" aria-current=" page" id="sport">Desporto</a>
-                    <a class="nav-link active categoryListTarget"" aria-current=" page" id="book">Livro</a>
-                    <a class="nav-link active" aria-current="page" href="map.html">Ajuda psicológica</a>
-                    <a class="nav-link active" aria-current="page" href="profile.html">Perfil</a>
+    <div id="fullSite">
+        <!-- NavBar -->
+        <nav class="navbar navbar-expand-md navbar-light" style="background-color: #9DDDFE;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="initialPage.html"><img src="../img/logo 1-2.png" id="logo"
+                        width="30%"><img src="../img/logo 2-2.png" id="logo" width="50"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
+                    aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarID" style="justify-content: flex-end;">
+                    <div class="navbar-nav">
+                        <a class="nav-link active categoryListTarget" aria-current="page" id="kitchen">Receita</a>
+                        <a class="nav-link active categoryListTarget"" aria-current=" page" id="sport">Desporto</a>
+                        <a class="nav-link active categoryListTarget"" aria-current=" page" id="book">Livro</a>
+                        <a class="nav-link active" aria-current="page" href="map.html">Ajuda psicológica</a>
+                        <a class="nav-link active" aria-current="page" href="profile.html">Perfil</a>
+                    </div>
                 </div>
             </div>
+        </nav>
+
+
+
+        <div>
+            <select class="col md-1" id="sltTransports" style="background-color: #d4ecf8; height:50px;">
+                <option value="">-- SELECIONAR TRANSPORTE --</option>
+                <option value="DRIVING">Carro</option>
+                <option value="WALKING">A pé</option>
+                <option value="BICYCLING">Bicicleta</option>
+                <option value="TRANSIT">Transit</option>
+            </select>
+            <p id="divResults" class="col md-6"></p>
         </div>
-    </nav>
-
-
-
-    <div>
-        <select class="col md-1" id="sltTransports" style="background-color: #d4ecf8; height:50px;">
-            <option value="">-- SELECIONAR TRANSPORTE --</option>
-            <option value="DRIVING">Carro</option>
-            <option value="WALKING">A pé</option>
-            <option value="BICYCLING">Bicicleta</option>
-            <option value="TRANSIT">Transit</option>
-        </select>
-        <p id="divResults" class="col md-6"></p>
+        <div id="map"></div>
     </div>
-    <div id="map"></div>
 
 
 

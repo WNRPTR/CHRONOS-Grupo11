@@ -16,80 +16,81 @@
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-sm navbar-light " style="background-color: #9DDDFE;" width="100%">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="" id="logo" width="30%">
-                <span class="navbar-text " style="color: rgb(255, 255, 255); ">chronos</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
-                aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" style="justify-content: flex-end;" id="navbarID">
-                <div class="navbar-nav">
-                    <a class="nav-link active categoryListTarget" aria-current="page" id="kitchen">Receita</a>
-                    <a class="nav-link active categoryListTarget" aria-current=" page" id="sport">Desporto</a>
-                    <a class="nav-link active categoryListTarget" aria-current=" page" id="book">Livro</a>
-                    <a class="nav-link active" aria-current="page" href="map.html">Ajuda psicológica</a>
-                    <a class="nav-link active" aria-current="page" href="profile.html">Perfil</a>
+    <div id="fullSite">
+        <nav class="navbar navbar-expand-sm navbar-light " style="background-color: #9DDDFE;" width="100%">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="" id="logo" width="30%">
+                    <span class="navbar-text " style="color: rgb(255, 255, 255); ">chronos</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
+                    aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" style="justify-content: flex-end;" id="navbarID">
+                    <div class="navbar-nav">
+                        <a class="nav-link active categoryListTarget" aria-current="page" id="kitchen">Receita</a>
+                        <a class="nav-link active categoryListTarget" aria-current=" page" id="sport">Desporto</a>
+                        <a class="nav-link active categoryListTarget" aria-current=" page" id="book">Livro</a>
+                        <a class="nav-link active" aria-current="page" href="map.html">Ajuda psicológica</a>
+                        <a class="nav-link active" aria-current="page" href="profile.html">Perfil</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
 
-    <div class="container-fluid " style="position: relative; top: 45px;">
-        <h1 id="insertSportProductName">[nome da atividade]</h1>
-        <br>
-        <div class="embed-responsive embed-responsive-16by9" style="justify-content: center;"
-            id="insertSportProductLink">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
-                title="YouTube video" allowfullscreen></iframe>
+        <div class="container-fluid " style="position: relative; top: 45px;">
+            <h1 id="insertSportProductName">[nome da atividade]</h1>
+            <br>
+            <div class="embed-responsive embed-responsive-16by9" style="justify-content: center;"
+                id="insertSportProductLink">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
+                    title="YouTube video" allowfullscreen></iframe>
 
-            <!-- <video width="100" height="240" controls id="insertSportProductLink">
-                <source src="Projeto Final de CPM (video promocional).mp4" type="video/mp4">
-            </video> -->
-        </div>
-        <br>
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab"
-                            aria-controls="description" aria-selected="true">Descrição</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="comments-tab" data-toggle="tab" href="#comments" role="tab"
-                            aria-controls="comments" aria-selected="false">Comentários</a>
-                    </li>
-                </ul>
-                <div class="tab-content" id="myTabContent">
-                    <div id="description" class="tab-pane fade show active" role="tabpanel"
-                        aria-labelledby=" description-tab">
-                        <p id="insertDescription" style="font-size: 150%;"> "Lorem ipsum dolor sit amet, consectetur
-                            adipiscing
-                            elit, sed
-                            do
-                            eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                            veniam,
-                            quis
-                            nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute
-                            irure
-                            dolor
-                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur.
-                        </p>
+                <!-- <video width="100" height="240" controls id="insertSportProductLink">
+                    <source src="Projeto Final de CPM (video promocional).mp4" type="video/mp4">
+                </video> -->
+            </div>
+            <br>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description"
+                                role="tab" aria-controls="description" aria-selected="true">Descrição</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="comments-tab" data-toggle="tab" href="#comments" role="tab"
+                                aria-controls="comments" aria-selected="false">Comentários</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div id="description" class="tab-pane fade show active" role="tabpanel"
+                            aria-labelledby=" description-tab">
+                            <p id="insertDescription" style="font-size: 150%;"> "Lorem ipsum dolor sit amet, consectetur
+                                adipiscing
+                                elit, sed
+                                do
+                                eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                veniam,
+                                quis
+                                nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute
+                                irure
+                                dolor
+                                in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                pariatur.
+                            </p>
 
-                    </div>
-                    <div id="comments" class="tab-pane fade" role="tabpanel" aria-labelledby=" comments-tab">
-                        <input class="w-25" type="text" id="newComment">
-                        <button class="btn btn-primary" id="applyComment">Adicionar</button>
-                        <hr>
-                        <div id="insertComment">
+                        </div>
+                        <div id="comments" class="tab-pane fade" role="tabpanel" aria-labelledby=" comments-tab">
+                            <input class="w-25" type="text" id="newComment">
+                            <button class="btn btn-primary" id="applyComment">Adicionar</button>
+                            <hr>
+                            <div id="insertComment">
+                            </div>
                         </div>
                     </div>
                 </div>
