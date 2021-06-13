@@ -39,10 +39,7 @@ export default class BookDetailView {
 
         for (let index in stores) {
             let item = stores[index].split(';');
-            this.insertProductStoreLink.innerHTML += `<tr>
-                <td>${item[0]}</td>
-                <td>${item[1]}</td>
-            </tr>`
+            this.insertProductStoreLink.innerHTML += `<h6 href=${item[1]}>${item[0]}</h6>`
         }
 
 
