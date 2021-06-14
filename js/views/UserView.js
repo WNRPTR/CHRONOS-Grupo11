@@ -7,7 +7,6 @@ export default class UserView {
 
         // register DOM
         this.registerUsername = document.getElementById('txtRegisterUsername');
-        this.registerEmail = document.getElementById('txtRegisterEmail')
         this.registerPassword = document.getElementById('txtRegisterPassword');
         this.registerPassword2 = document.getElementById('txtConfirmRegisterPassword');
         this.registerButton = document.getElementById('btnRegister');
@@ -54,7 +53,7 @@ export default class UserView {
                 if (this.registerPassword.value !== this.registerPassword2.value) {
                     throw Error('Password and Confirm Password are not equal');
                 }
-                this.userController.register(this.registerUsername.value, this.registerEmail.value, this.registerPassword.value, 'user');
+                this.userController.register(this.registerUsername.value, this.registerPassword.value, 'user');
                 this.displayMessage('User registered with success!', 'success');
                 location.href = '../html/login.html';
             } catch (e) {
