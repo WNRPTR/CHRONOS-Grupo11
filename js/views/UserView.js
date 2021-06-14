@@ -24,11 +24,10 @@ export default class UserView {
             this.bindLoginForm();
         }
 
-        /* this.fullSite = document.querySelector('#fullSite')
-        this.body = document.getElementsByTagName('body')
+        this.fullSite = document.querySelector('#fullSite')
         if (this.fullSite) {
             this.checkLoginStatus()
-        } */
+        }
 
         this.logoutButton = document.getElementById('btnLogout');
         if (this.logoutButton) {
@@ -95,13 +94,13 @@ export default class UserView {
         })
     }
 
-    /* checkLoginStatus() {
+    checkLoginStatus() {
         if (this.userController.isLogged()) {
             this.updateSite('login');
         } else {
             this.updateSite('logout');
         }
-    } */
+    }
 
     checkUserType() {
         if (this.userController.isAdmin()) {
@@ -116,19 +115,19 @@ export default class UserView {
             alert(`${type}, ${message}`);
     }
 
-    /* updateSite(event) {
+    updateSite(event) {
         switch (event) {
             case 'login':
                 this.fullSite.style.visibility = 'visible'
                 break;
             case 'logout':
                 this.fullSite.style.visibility = 'hidden'
-                this.body.innerHTML = `<div>
+                document.body.innerHTML = `<div>
                 <h5>Precisa de estar logado para poder usufruir do site</h5>
             </div>`
 
         }
-    } */
+    }
 
     updateUserSite(event) {
         switch (event) {

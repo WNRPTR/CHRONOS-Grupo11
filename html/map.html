@@ -80,7 +80,7 @@
                     location: { lat: 41.361500, lng: -8.744500 },
                 },
                 {
-                    text: 'terceiro',
+                    text: 'terceiro<br>sdajdspaoj',
                     location: { lat: 41.368250, lng: -8.747000 },
                 },
                 {
@@ -95,9 +95,11 @@
             const directionsService = new google.maps.DirectionsService();
             const directionsRenderer = new google.maps.DirectionsRenderer();
 
+
             const map = new google.maps.Map(document.getElementById("map"), {
                 center: esmad,
-                zoom: 16
+                zoom: 16,
+                mapTypeControl: false
             });
 
             directionsRenderer.setMap(map)
