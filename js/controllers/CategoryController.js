@@ -66,13 +66,4 @@ export default class CategoryController {
         location.reload(1000)
     }
 
-
-    /*  getProductsFilter() {
-         let filteredProducts = this.categorys.sort()
-     } */
-
-    /* getCurrentProductType() {
-        const categoryName = sessionStorage.getItem("product")
-        return this.categorys.find(category => category.name = categoryName).categoryType
-    } */
 }
