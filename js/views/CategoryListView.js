@@ -50,7 +50,6 @@ export default class CategoryListView {
         for (let category in getCategoryList) {
             if (getCategoryList[category].categoryType == typeCategory) {
                 productList.push(getCategoryList[category])
-
             }
         }
 
