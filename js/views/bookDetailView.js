@@ -59,7 +59,7 @@ export default class BookDetailView {
 
     addBooksPoints() {
 
-        const user = sectionstorage.getItem('loggedUser')
+        const user = sessionStorage.getItem('loggedUser')
         this.userController.addBookPoints(user)
     }
 

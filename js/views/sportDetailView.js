@@ -46,7 +46,7 @@ export default class SportDetailView {
 
     addSportsPoints() {
 
-        const user = sectionstorage.getItem('loggedUser')
+        const user = sessionStorage.getItem('loggedUser')
         this.userController.addSportPoints(user)
     }
 

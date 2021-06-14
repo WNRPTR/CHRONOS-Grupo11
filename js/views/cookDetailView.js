@@ -50,7 +50,7 @@ export default class CookDetailView {
 
         this.insertKitchenProductLink.innerHTML = `<iframe class="embed-responsive-item" src=${productInfo.videoLink}
         title="YouTube video" allowfullscreen></iframe>`
-        
+
     }
 
     createComment() {
@@ -61,7 +61,7 @@ export default class CookDetailView {
 
     addCookPoints() {
 
-        const user = sectionstorage.getItem('loggedUser')
+        const user = sessionStorage.getItem('loggedUser')
         this.userController.addKitchenPoints(user)
     }
 

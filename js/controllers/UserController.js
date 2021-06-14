@@ -94,18 +94,15 @@ export default class UserController {
     addSportPoints(name) {
         this.users.find(user => user.username == name).sportPoints += 5
         localStorage.setItem('users', JSON.stringify(this.users))
-        location.reload(1000)
     }
 
     addKitchenPoints(name) {
         this.users.find(user => user.username == name).kitchenPoints += 5
         localStorage.setItem('users', JSON.stringify(this.users))
-        location.reload(1000)
     }
 
     addBookPoints(name) {
         this.users.find(user => user.username == name).bookPoints += 5
         localStorage.setItem('users', JSON.stringify(this.users))
-        location.reload(1000)
     }
 }
