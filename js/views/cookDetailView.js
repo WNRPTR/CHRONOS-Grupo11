@@ -45,7 +45,8 @@ export default class CookDetailView {
         this.insertPreparation.innerHTML = `${productInfo.description}`
 
         for (let index in productInfo.comments) {
-            this.insertComment.innerHTML += `<p>${productInfo.comments[index]}</p><hr>`
+            const items = productInfo.comments[index].split(';')
+            this.insertComment.innerHTML += `<p>${items[0]}:&nbsp;${items[1]}</p><hr>`
         }
 
         this.insertKitchenProductLink.innerHTML = `<iframe class="embed-responsive-item" src=${productInfo.videoLink}
@@ -55,7 +56,8 @@ export default class CookDetailView {
 
     createComment() {
         this.applyComment.addEventListener('click', () => {
-            this.categoryController.addComment(this.newComment.value);
+            const currentUser = sessionStorage.getItem('loggedUser')
+            this.categoryController.addComment(currentUser, this.newComment.value);
         })
     }
 

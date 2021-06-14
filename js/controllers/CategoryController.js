@@ -59,17 +59,17 @@ export default class CategoryController {
     }
 
 
-    addComment(comment) {
+    addComment(username, comment) {
         const productName = sessionStorage.getItem("product")
-        this.categorys.find(category => category.name == productName).comments.push(comment)
+        this.categorys.find(category => category.name == productName).comments.push(`${username};${comment}`)
         localStorage.setItem('categorys', JSON.stringify(this.categorys));
         location.reload(1000)
     }
 
 
-    getProductsFilter() {
-        let filteredProducts = this.categorys.sort()
-    }
+    /*  getProductsFilter() {
+         let filteredProducts = this.categorys.sort()
+     } */
 
     /* getCurrentProductType() {
         const categoryName = sessionStorage.getItem("product")

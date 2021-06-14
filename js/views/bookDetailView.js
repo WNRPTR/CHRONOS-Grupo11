@@ -47,13 +47,15 @@ export default class BookDetailView {
 
 
         for (let index in productInfo.comments) {
-            this.insertComment.innerHTML += `<p>${productInfo.comments[index]}</p><hr>`
+            const items = productInfo.comments[index].split(';')
+            this.insertComment.innerHTML += `<p>${items[0]}:&nbsp;${items[1]}</p><hr>`
         }
     }
 
     createComment() {
         this.applyComment.addEventListener('click', () => {
-            this.categoryController.addComment(this.newComment.value);
+            const currentUser = sessionStorage.getItem('loggedUser')
+            this.categoryController.addComment(currentUser, this.newComment.value);
         })
     }
 
