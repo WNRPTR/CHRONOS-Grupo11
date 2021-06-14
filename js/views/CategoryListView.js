@@ -48,7 +48,7 @@ export default class CategoryListView {
     fillCategoryList(getCategoryList) {
 
         const typeCategory = this.categoryController.getCurrentCategory();
-
+        const currentCategory = sessionStorage.getItem('category')
         const productList = []
         let img = ""
 
@@ -81,9 +81,9 @@ export default class CategoryListView {
                     </center>
                     <div class="card-body ">
                         <h5 class="card-title">${product.name}</h5>
-                        <button type="button" class="btn btn-primary btnProductDetail" id =  ${product.name}>VER MAIS</button>`
+                        <button type="button" class="btn btn-primary btnProductDetail" id ="${product.name}"  data-type="${currentCategory}">VER MAIS</button>`
             if (this.userController.isAdmin()) {
-                result += `<button type="button" class="btn btn-danger btnRemoveProduct" id= ${product.name}> X </button>`
+                result += `<button type="button" class="btn btn-danger btnRemoveProduct" id= "${product.name}"> X </button>`
             }
 
             result += `</div>
