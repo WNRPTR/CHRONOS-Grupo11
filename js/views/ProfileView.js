@@ -55,7 +55,6 @@ export default class ProfileView {
 
         //User data for info table
         this.insertName = document.querySelector('#insertName');
-        this.insertEmail = document.getElementById('insertEmail')
         this.insertTotalPoints = document.querySelector('#insertTotalPoints');
         this.insertRecipeNumber = document.querySelector('#insertRecipeNumber');
         this.insertSportNumber = document.querySelector('#insertSportNumber');
@@ -88,7 +87,6 @@ export default class ProfileView {
     completeForm() {
         const currentUser = this.userController.getUserData()
         this.insertName.innerHTML = currentUser.username
-        this.insertEmail.innerHTML = currentUser.email
         this.pointsKitchen.innerHTML += currentUser.kitchenPoints
         this.pointsSport.innerHTML += currentUser.sportPoints
         this.pointsBook.innerHTML += currentUser.bookPoints
