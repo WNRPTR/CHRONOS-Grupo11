@@ -13,6 +13,9 @@ export default class SportDetailView {
         this.insertComment = document.querySelector('#insertComment')
         this.fillInfo();
 
+        //function to add points
+        this.addSportsPoints();
+
         //info to add a comment
         this.newComment = document.querySelector('#newComment')
         this.applyComment = document.querySelector('#applyComment')
@@ -41,6 +44,10 @@ export default class SportDetailView {
         })
     }
 
+    addSportsPoints() {
 
+        const user = sectionstorage.getItem('loggedUser')
+        this.userController.addSportPoints(user)
+    }
 
 }

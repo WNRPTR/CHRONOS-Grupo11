@@ -14,6 +14,9 @@ export default class CookDetailView {
         this.insertComment = document.querySelector('#insertComment')
         this.fillInfo();
 
+        //function to add points
+        this.addCookPoints();
+
         //info to add a comment
         this.newComment = document.querySelector('#newComment')
         this.applyComment = document.querySelector('#applyComment')
@@ -56,5 +59,10 @@ export default class CookDetailView {
         })
     }
 
+    addCookPoints() {
+
+        const user = sectionstorage.getItem('loggedUser')
+        this.userController.addKitchenPoints(user)
+    }
 
 }

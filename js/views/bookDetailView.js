@@ -15,6 +15,9 @@ export default class BookDetailView {
         this.insertComment = document.querySelector('#insertComment')
         this.fillInfo();
 
+        //function to add points
+        this.addBooksPoints();
+
         //info to add a comment
         this.newComment = document.querySelector('#newComment')
         this.applyComment = document.querySelector('#applyComment')
@@ -48,15 +51,16 @@ export default class BookDetailView {
         }
     }
 
-
-
-
-
-
     createComment() {
         this.applyComment.addEventListener('click', () => {
             this.categoryController.addComment(this.newComment.value);
         })
+    }
+
+    addBooksPoints() {
+
+        const user = sectionstorage.getItem('loggedUser')
+        this.userController.addBookPoints(user)
     }
 
 }
