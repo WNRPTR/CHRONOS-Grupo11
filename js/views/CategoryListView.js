@@ -9,8 +9,7 @@ export default class CategoryListView {
         //function to order activities
         this.filterProducts = document.querySelector('#filterProducts');
         if (this.filterProducts) {
-            orderProducts();
-
+            this.orderProducts();
         }
 
         //function to get activities ID's
@@ -130,8 +129,7 @@ export default class CategoryListView {
     orderProducts() {
         this.filterProducts.addEventListener('click', () => {
             this.fillCategoryList(this.categoryController.getProductsFilter())
-            
-
+            location.reload(1000)
         })
     }
 
