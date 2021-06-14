@@ -6,6 +6,13 @@ export default class CategoryListView {
         this.userController = new UserController();
         this.categoryController = new CategoryController();
 
+        //function to order activities
+        this.filterProducts = document.querySelector('#filterProducts');
+        if (this.filterProducts) {
+            orderProducts();
+
+        }
+
         //function to get activities ID's
         this.categoryListname = document.querySelector('#categoryListName');
         this.addCategoryProduct = document.querySelector('#addCategoryProduct');
@@ -118,6 +125,14 @@ export default class CategoryListView {
 
             })
         }
+    }
+
+    orderProducts() {
+        this.filterProducts.addEventListener('click', () => {
+            this.fillCategoryList(this.categoryController.getProductsFilter())
+            
+
+        })
     }
 
 }
