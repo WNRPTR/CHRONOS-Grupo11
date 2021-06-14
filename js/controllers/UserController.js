@@ -7,12 +7,12 @@ export default class UserController {
         this.currentUser = sessionStorage.loggedUser ? sessionStorage.loggedUser : null
     }
 
-    register(username, email, password, type) {
+    register(username, password, type) {
         if (this.users.find(user => user.username === username)) {
             throw Error(`User with username "${username}" already exists!`);
         } else {
             const newId = this.users.length > 0 ? this.users[this.users.length - 1].id + 1 : 1
-            this.users.push(new UserModel(newId, username, email, password, type));
+            this.users.push(new UserModel(newId, username, password, type));
             localStorage.setItem('users', JSON.stringify(this.users));
         }
     }

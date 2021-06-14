@@ -1,8 +1,7 @@
 export default class UserModel {
-    constructor(id, username, email, password, type) {
+    constructor(id, username, password, type) {
         this.id = id
         this.username = username
-        this.email = email
         this.password = password
         this.type = type
         this.kitchenPoints = 0
