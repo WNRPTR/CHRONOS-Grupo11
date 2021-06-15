@@ -36,9 +36,9 @@ class App {
                 username: 'admin',
                 password: 'admin',
                 type: 'admin',
-                kitchenPoints: 100,
-                sportPoints: 100,
-                bookPoints: 100,
+                kitchenPoints: 1000,
+                sportPoints: 1000,
+                bookPoints: 1000,
 
             },
             {
@@ -66,22 +66,58 @@ class App {
 
         const trophies = [
             {
-                name: 'Aprendiz Comilão',
+                name: 'Aprendiz',
                 trophyType: 'kitchen',
                 text: 'ver 2 receitas',
                 points: 10,
             },
             {
-                name: 'Não sdentário',
+                name: 'Gosto na cozinha',
+                trophyType: 'kitchen',
+                text: 'ver 4 receitas',
+                points: 20,
+            },
+            {
+                name: 'Mestre da culinária',
+                trophyType: 'kitchen',
+                text: 'ver 10 receitas',
+                points: 50,
+            },
+            {
+                name: 'Não sedentário',
                 trophyType: 'sport',
                 text: 'ver 2 desportos',
                 points: 10,
             },
             {
-                name: 'Jovem aprendedor',
+                name: 'Inquieto',
+                trophyType: 'sport',
+                text: 'ver 4 desportos',
+                points: 20,
+            },
+            {
+                name: 'Elétrico',
+                trophyType: 'sport',
+                text: 'ver 10 desportos',
+                points: 50,
+            },
+            {
+                name: 'Curioso',
                 trophyType: 'book',
                 text: 'ver 2 livros',
                 points: 10,
+            },
+            {
+                name: 'Aprendedor',
+                trophyType: 'book',
+                text: 'ver 4 livros',
+                points: 20,
+            },
+            {
+                name: 'Estudioso',
+                trophyType: 'book',
+                text: 'ver 5 livros',
+                points: 50,
             }
         ];
 

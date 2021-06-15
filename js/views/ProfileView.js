@@ -16,9 +16,8 @@ export default class ProfileView {
         this.userList = document.querySelector('#userList');
         this.btnBanUser = document.getElementsByClassName('banUser');
         this.banForm();
-        if (this.btnBanUser) {
-            this.banUser()
-        }
+        this.banUser();
+
 
         //category data to create a new activity
         this.txtAddProductName = document.querySelector('#txtAddProductName');
