@@ -64,7 +64,7 @@ export default class UserController {
                 usernames.push(this.users[user].username)
             }
         }
-        console.log(usernames)
+
 
         return usernames
     }

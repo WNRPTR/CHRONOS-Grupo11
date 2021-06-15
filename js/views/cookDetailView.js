@@ -9,6 +9,7 @@ export default class CookDetailView {
         //Infos to create cooking detail page
         this.insertKitchenProductName = document.querySelector('#insertKitchenProductName')
         this.insertKitchenProductLink = document.querySelector('#insertKitchenProductLink')
+        this.insertDuration = document.querySelector('#insertDuration')
         this.insertPreparation = document.querySelector('#insertPreparation')
         this.insertIngridients = document.querySelector('#insertIngridients')
         this.insertComment = document.querySelector('#insertComment')
@@ -42,6 +43,7 @@ export default class CookDetailView {
             </tr>`
         }
 
+        this.insertDuration.innerHTML = `Duração: ${productInfo.duration}`
         this.insertPreparation.innerHTML = `${productInfo.description}`
 
         for (let index in productInfo.comments) {

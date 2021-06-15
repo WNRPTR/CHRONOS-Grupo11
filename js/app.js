@@ -34,18 +34,16 @@ class App {
             {
                 id: 0,
                 username: 'admin',
-                email: 'admin@gmail.com',
                 password: 'admin',
                 type: 'admin',
-                kitchenPoints: 0,
-                sportPoints: 0,
-                bookPoints: 0,
+                kitchenPoints: 100,
+                sportPoints: 100,
+                bookPoints: 100,
 
             },
             {
                 id: 1,
                 username: 'user1',
-                email: 'doidinhos@gmail.com',
                 password: 'pass1',
                 type: 'user',
                 kitchenPoints: 65,
@@ -56,7 +54,6 @@ class App {
             {
                 id: 2,
                 username: 'user2',
-                email: 'gostoEtomo@gmail.com',
                 password: 'pass2',
                 type: 'user',
                 kitchenPoints: 0,
