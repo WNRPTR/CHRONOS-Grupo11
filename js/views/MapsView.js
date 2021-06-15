@@ -10,12 +10,7 @@ export default class MapsView {
         this.map = document.querySelector('#map')
         this.slpTransports = document.querySelector('#sltTransports')
         this.map = document.querySelector('#divResults')
-        /* this.initMap(this.map) */
-
-    }
-
-    /* initMap(map) {
-        structuresPositions = [
+        /* this.structuresPositions = [
             {
                 text: 'primeiro',
                 location: { lat: 41.371250, lng: -8.728500 },
@@ -33,10 +28,15 @@ export default class MapsView {
                 location: { lat: 41.374099, lng: -8.735550 },
             },
         ]
+        this.initMap(this.map) */
+
+    }
+
+    initMap() {
 
         const sltTransport = document.getElementById('sltTransports')
         let esmad = { lat: 41.366949, lng: -8.738722 }
-        infoWindow = new google.maps.InfoWindow();
+        const infoWindow = new google.maps.InfoWindow();
         const directionsService = new google.maps.DirectionsService();
         const directionsRenderer = new google.maps.DirectionsRenderer();
 
@@ -54,68 +54,70 @@ export default class MapsView {
             map: map,
             animation: google.maps.Animation.DROP
         })
+        this.structuresPositions.forEach((structure) => {
+            this.createMark(structure)
+        });
+        /* for (const structures of this.structuresPositions) {
+            createMark(structures);
+        } */
+    }
 
-        for (const structures of structuresPositions) {
-            createMark(structures)
-        }
-
-        createMark(result) {
-            const marker = new google.maps.Marker({
-                map: map,
-                position: result.location,
-                animation: '',
-            })
+    createMark(result) {
+        const marker = new google.maps.Marker({
+            map: map,
+            position: result.location,
+            animation: ''
+        });
 
 
 
-            google.maps.event.addListener(marker, 'click', function () {
-                infoWindow.setContent(result.text);
-                infoWindow.open(map, this)
-                toggleBounce(marker);
-                if (sltTransport !== null) {
-                    calcRoute(directionsService, directionsRenderer, marker.position)
-                }
-            });
-        }
-
-        toggleBounce(marker) {
-            if (marker.getAnimation() !== null) {
-                marker.setAnimation(null);
-            } else {
-                marker.setAnimation(google.maps.Animation.BOUNCE);
+        google.maps.event.addListener(marker, 'click', function () {
+            infoWindow.setContent(result.text);
+            infoWindow.open(map, this);
+            toggleBounce(marker);
+            if (sltTransport !== null) {
+                calcRoute(directionsService, directionsRenderer, marker.position);
             }
-        }
+        });
+    }
+
+    toggleBounce(marker) {
+        if (marker.getAnimation() !== null) {
+            marker.setAnimation(null);
+        } else {
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+        };
+    };
 
 
-        calcRoute(directionsService, directionsRenderer, marker) {
+    calcRoute(directionsService, directionsRenderer, marker) {
 
-            const selectedMode = document.querySelector('#sltTransports').value;
+        const selectedMode = document.querySelector('#sltTransports').value;
 
-            // Creation of a DirectionsRequest object 
-            const request = {
-                origin: esmad,
-                destination: marker,
-                travelMode: google.maps.TravelMode[selectedMode]
-            };
+        // Creation of a DirectionsRequest object 
+        const request = {
+            origin: esmad,
+            destination: marker,
+            travelMode: google.maps.TravelMode[selectedMode]
+        };
 
 
 
-            directionsService.route(request, (result, status) => {
-                if (status == 'OK') {
-                    directionsRenderer.setDirections(result);
-                    const directionsData = result.routes[0].legs[0]; // Get data about the mapped route
-                    if (directionsData) {
-                        document.querySelector("#divResults").innerHTML = `<hr>
-                        <div>Distância de viagem: ${directionsData.distance.text} (${directionsData.duration.text})</div><hr>
-                    `
-                    }
-                    else {
-                        document.querySelector("#divResults").innerHTML = 'Directions request failed'
-                    }
-                } else {
-                    alert('Não é possível encontrar uma rota para esse transporte.\nPor favor escolha outro transporte.')
+        directionsService.route(request, (result, status) => {
+            if (status == 'OK') {
+                directionsRenderer.setDirections(result);
+                const directionsData = result.routes[0].legs[0]; // Get data about the mapped route
+                if (directionsData) {
+                    document.querySelector("#divResults").innerHTML = `<hr>
+                    <div>Distância de viagem: ${directionsData.distance.text} (${directionsData.duration.text})</div><hr>
+                `
                 }
-            });
-        }
-    } */
+                else {
+                    document.querySelector("#divResults").innerHTML = 'Directions request failed'
+                }
+            } else {
+                alert('Não é possível encontrar uma rota para esse transporte.\nPor favor escolha outro transporte.')
+            }
+        });
+    }
 }

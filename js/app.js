@@ -5,8 +5,6 @@ import CategoryListView from './views/CategoryListView.js'
 import SportDetailView from './views/SportDetailView.js'
 import BookDetailView from './views/BookDetailView.js'
 import CookDetailView from './views/CookDetailView.js'
-import MapsView from './views/MapsView.js'
-
 class App {
     constructor() {
         this.routes = {
@@ -19,7 +17,7 @@ class App {
             'sportDetail': [SportDetailView, CategoryListView, UserView],
             'bookDetail': [BookDetailView, CategoryListView, UserView],
             'cookDetail': [CookDetailView, CategoryListView, UserView],
-            'map': [MapsView, UserView, CategoryListView]
+            'map': [UserView, CategoryListView]
         };
 
         // import dummy data for testing purposes
