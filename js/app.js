@@ -14,9 +14,9 @@ class App {
             'profile': [UserView, ProfileView, CategoryListView],
             'initialPage': [UserView, InitialPageView, CategoryListView],
             'categoryList': [UserView, CategoryListView],
-            'sportDetail': [SportDetailView, CategoryListView, UserView],
-            'bookDetail': [BookDetailView, CategoryListView, UserView],
-            'cookDetail': [CookDetailView, CategoryListView, UserView],
+            'sportDetail': [UserView, SportDetailView, CategoryListView],
+            'bookDetail': [UserView, BookDetailView, CategoryListView],
+            'cookDetail': [UserView, CookDetailView, CategoryListView],
             'map': [UserView, CategoryListView]
         };
 
