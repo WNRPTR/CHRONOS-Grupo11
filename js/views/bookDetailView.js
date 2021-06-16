@@ -36,7 +36,7 @@ export default class BookDetailView {
 
         this.insertProductTitle.innerHTML = `${productInfo.name}`
         this.insertProductImage.innerHTML = `<img src=${productInfo.videoLink} class="figure-img"
-            alt="" style="max-height:600px; max-width:500px">`
+            alt="" style="max-height:600px; max-width:300px">`
         this.insertProductStoryDescription.innerHTML = `${productInfo.description}`
         this.insertProductStoryThemes.innerHTML = `${productInfo.themes}`
 
